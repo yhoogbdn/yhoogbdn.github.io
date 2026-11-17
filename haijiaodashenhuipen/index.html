@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>海角大神会喷水的亲姐姐51-社区文化图解</title>
+<meta name="description" content="海角大神会喷水的亲姐姐51是围绕网络社区创作文化展开的讲解站，梳理社区昵称由来、内容版块、创作类型、互动礼仪与真假信息辨别，帮助新成员快速了解社区运作与常用术语。">
+<meta name="keywords" content="海角大神会喷水的亲姐姐51">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f3b4c'/%3E%3Cpath d='M12 42c8-14 16-6 22-16s10-12 18-14v10c-6 4-10 12-18 16s-14 8-22 14z' fill='%23f2b544'/%3E%3Ccircle cx='46' cy='18' r='5' fill='%23e8543f'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#14232b;
+  --ink-soft:#3c525c;
+  --muted:#6d8089;
+  --paper:#f7f4ee;
+  --card:#ffffff;
+  --line:#e2dcd2;
+  --brand:#0f3b4c;
+  --brand-2:#12586e;
+  --accent:#e8543f;
+  --accent-2:#f2b544;
+  --ok:#2f7d63;
+  --radius:14px;
+  --radius-sm:9px;
+  --shadow:0 6px 24px rgba(20,35,43,.08);
+  --shadow-sm:0 2px 8px rgba(20,35,43,.06);
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --stick:96px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--stick)}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font);font-size:16px;line-height:1.78;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:800;letter-spacing:.01em}
+p{margin:0 0 .9em}
+ul,ol{margin:0 0 .9em;padding-left:1.25em}
+li{margin:.25em 0}
+button{font-family:inherit}
+
+/* ---------- 吸顶区 ---------- */
+.sticky-wrap{position:sticky;top:0;z-index:50}
+.announce{
+  background:linear-gradient(90deg,#0f3b4c,#12586e 60%,#146b82);
+  color:#eaf3f5;font-size:13px;letter-spacing:.02em;
+}
+.announce-in{
+  max-width:1180px;margin:0 auto;padding:7px 20px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.announce .tag{
+  background:var(--accent-2);color:#3a2a05;font-weight:800;
+  padding:1px 8px;border-radius:999px;font-size:12px;white-space:nowrap;
+}
+.announce a{color:#ffe1a8}
+.header{
+  background:rgba(247,244,238,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-in{
+  max-width:1180px;margin:0 auto;padding:10px 20px;
+  display:flex;align-items:center;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none!important;flex-shrink:0}
+.brand svg{width:40px;height:40px;flex-shrink:0}
+.brand-name{font-weight:900;font-size:17px;color:var(--brand);line-height:1.2;max-width:230px}
+.brand-sub{display:block;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.08em}
+.nav{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+.nav a{
+  padding:6px 10px;border-radius:999px;font-size:14px;color:var(--ink-soft);
+  font-weight:600;text-decoration:none!important;white-space:nowrap;
+}
+.nav a:hover,.nav a.active{background:#e6eef0;color:var(--brand)}
+.nav a:focus-visible,.brand:focus-visible,.btn:focus-visible{
+  outline:3px solid var(--accent-2);outline-offset:2px;border-radius:8px;
+}
+.search{display:flex;align-items:center;gap:6px;position:relative;flex-shrink:0}
+.search input{
+  width:150px;padding:7px 11px;border:1px solid var(--line);border-radius:999px;
+  background:#fff;font-size:13.5px;color:var(--ink);font-family:inherit;
+}
+.search input:focus{outline:2px solid var(--accent-2);outline-offset:1px;border-color:var(--brand-2)}
+.search button{
+  border:0;background:var(--brand);color:#fff;border-radius:999px;
+  padding:7px 13px;font-size:13px;font-weight:700;cursor:pointer;
+}
+.search button:hover{background:var(--brand-2)}
+.menu-toggle{
+  display:none;border:1px solid var(--line);background:#fff;border-radius:9px;
+  padding:7px 11px;font-size:14px;font-weight:700;color:var(--brand);cursor:pointer;
+}
+#search-msg{width:100%;font-size:12.5px;color:var(--accent);margin-top:2px;display:none}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 340px at 82% -10%,rgba(242,181,68,.28),transparent 62%),
+    radial-gradient(700px 300px at 6% 110%,rgba(232,84,63,.16),transparent 60%),
+    linear-gradient(160deg,#0f3b4c 0%,#12495c 52%,#0e3344 100%);
+  color:#f3f7f8;
+}
+.hero-in{
+  max-width:1180px;margin:0 auto;padding:44px 20px 48px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;
+}
+.hero .kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;
+  letter-spacing:.14em;color:#ffd98a;text-transform:uppercase;
+}
+.hero .kicker::before{content:"";width:26px;height:2px;background:#ffd98a;display:inline-block}
+.hero h1{
+  font-size:clamp(26px,4vw,42px);margin:14px 0 12px;color:#fff;
+  letter-spacing:.01em;word-break:break-word;
+}
+.hero p.lead{
+  font-size:15.5px;color:#d5e4e8;max-width:34em;line-height:1.85;
+}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:11px 20px;border-radius:999px;font-weight:800;font-size:14.5px;
+  text-decoration:none!important;transition:transform .18s ease,background .18s ease;
+}
+.btn-primary{background:var(--accent-2);color:#32230a}
+.btn-primary:hover{background:#ffc957;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#eaf3f5;border:1px solid rgba(234,243,245,.45)}
+.btn-ghost:hover{background:rgba(234,243,245,.12);transform:translateY(-2px)}
+.hero-stats{
+  display:flex;gap:26px;margin-top:28px;flex-wrap:wrap;
+  border-top:1px solid rgba(234,243,245,.18);padding-top:18px;
+}
+.hero-stats div{min-width:92px}
+.hero-stats b{display:block;font-size:22px;color:#ffd98a;line-height:1.2}
+.hero-stats span{font-size:12.5px;color:#bdd2d8}
+.hero-art{position:relative;min-height:280px}
+.hero-art svg{width:100%;height:auto;display:block}
+.hero-badge{
+  position:absolute;right:4px;bottom:8px;background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.3);border-radius:12px;
+  padding:8px 12px;font-size:12px;color:#ffe9bd;backdrop-filter:blur(4px);
+}
+
+/* ---------- 布局 ---------- */
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.layout{
+  display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:34px;
+  padding-top:36px;padding-bottom:50px;
+  align-items:start;
+}
+section[id],div[id]{scroll-margin-top:var(--stick)}
+.sec{margin-bottom:44px}
+.sec-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.sec-head h2{font-size:22px;color:var(--brand);letter-spacing:.01em}
+.sec-head .no{
+  font-size:12px;font-weight:800;color:var(--accent);letter-spacing:.12em;
+  border:1px solid #f0c9bf;background:#fdf1ed;border-radius:6px;padding:1px 7px;
+}
+.sec-head p{font-size:13px;color:var(--muted);margin:0}
+.sec-lead{color:var(--ink-soft);font-size:15px;max-width:56em;margin-bottom:16px}
+
+/* ---------- 卡片体系 ---------- */
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 17px;box-shadow:var(--shadow-sm);
+}
+.card h3{font-size:16px;margin-bottom:6px;color:var(--ink)}
+.card p{font-size:14px;color:var(--ink-soft);margin-bottom:.5em}
+.card .meta{font-size:12px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.card .meta b{color:var(--accent);font-weight:700}
+.thumb{width:100%;height:128px;object-fit:cover;border-radius:var(--radius-sm);margin-bottom:11px}
+.tag-row{display:flex;gap:8px;flex-wrap:wrap}
+.tag{
+  display:inline-block;font-size:12.5px;font-weight:600;padding:3px 11px;
+  border-radius:999px;background:#e8eff1;color:var(--brand-2);
+  border:1px solid #d6e3e6;text-decoration:none!important;
+}
+.tag:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
+.tag.accent{background:#fdeee9;color:#a8321f;border-color:#f3cfc6}
+
+/* 精选：非对称组合 */
+.feature-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:16px}
+.feature-main{
+  background:linear-gradient(155deg,#fff,#f3f8f9);
+  border:1px solid #d8e6e9;border-radius:var(--radius);padding:18px;
+}
+.feature-main h3{font-size:19px;color:var(--brand);margin-bottom:8px}
+.feature-side{display:grid;gap:12px}
+.mini{
+  border-left:4px solid var(--accent-2);background:#fff;border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  padding:11px 14px;box-shadow:var(--shadow-sm);border-top:1px solid var(--line);
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.mini strong{display:block;font-size:14.5px;color:var(--ink);margin-bottom:3px}
+.mini span{font-size:12.5px;color:var(--muted)}
+
+/* 紧凑列表 */
+.list{list-style:none;padding:0;margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.list li{
+  display:grid;grid-template-columns:76px minmax(0,1fr) auto;gap:12px;align-items:baseline;
+  padding:12px 16px;border-bottom:1px dashed var(--line);margin:0;
+}
+.list li:last-child{border-bottom:0}
+.list .date{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.list .t{font-size:14.5px;font-weight:700;color:var(--ink)}
+.list .t a{color:inherit;text-decoration:none}
+.list .t a:hover{color:var(--accent)}
+.list .src{font-size:12px;color:var(--brand-2);background:#eaf2f4;border-radius:6px;padding:1px 8px;white-space:nowrap}
+
+/* 分类索引 */
+.cat-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.cat-item{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:10px 13px;text-decoration:none!important;
+  transition:transform .16s ease,border-color .16s ease;
+}
+.cat-item:hover{transform:translateY(-2px);border-color:var(--brand-2)}
+.cat-item .n{font-size:14px;font-weight:700;color:var(--ink)}
+.cat-item .c{font-size:12px;color:var(--muted)}
+
+/* 深度解析 */
+.article{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;box-shadow:var(--shadow);
+}
+.article h3{font-size:17.5px;color:var(--brand);margin:22px 0 8px;padding-left:11px;border-left:4px solid var(--accent-2)}
+.article h3:first-of-type{margin-top:6px}
+.article p{font-size:15px;color:var(--ink-soft);line-height:1.9}
+.article .claim{
+  background:#f5fafb;border:1px solid #d8e8eb;border-radius:var(--radius-sm);
+  padding:13px 16px;margin:14px 0;font-size:14.5px;color:var(--ink);
+}
+.article .claim b{color:var(--brand)}
+.article blockquote{
+  margin:16px 0;padding:12px 16px;border-left:4px solid var(--accent);
+  background:#fdf6f3;color:#5c4038;font-size:14.5px;border-radius:0 8px 8px 0;
+}
+.article blockquote cite{display:block;font-size:12.5px;color:var(--muted);font-style:normal;margin-top:6px}
+table.compare{width:100%;border-collapse:collapse;font-size:13.8px;margin:12px 0}
+table.compare caption{text-align:left;font-size:12.5px;color:var(--muted);padding-bottom:6px}
+table.compare th,table.compare td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+table.compare th{background:#eef5f6;color:var(--brand);font-weight:700}
+
+/* 体验指南：编号步骤 */
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.steps li{
+  counter-increment:s;position:relative;background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius-sm);padding:13px 16px 13px 56px;font-size:14.5px;color:var(--ink-soft);
+}
+.steps li::before{
+  content:counter(s,decimal-leading-zero);position:absolute;left:14px;top:12px;
+  width:28px;height:28px;border-radius:8px;background:var(--brand);color:#ffd98a;
+  font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;
+}
+.steps li b{color:var(--ink)}
+
+/* FAQ */
+details{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:0;margin-bottom:10px;overflow:hidden;
+}
+details summary{
+  cursor:pointer;padding:13px 16px;font-weight:700;font-size:14.8px;color:var(--ink);
+  list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"＋";color:var(--brand-2);font-weight:800;flex-shrink:0}
+details[open] summary::after{content:"－"}
+details summary:focus-visible{outline:3px solid var(--accent-2);outline-offset:-3px}
+details .a{padding:0 16px 14px;font-size:14.3px;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:12px}
+
+/* 评论 */
+.comments{display:grid;gap:12px}
+.comment{
+  background:#fff;border:1px solid var(--line);border-left:4px solid #cfdfe3;
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:12px 15px;
+}
+.comment .who{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--muted);margin-bottom:4px}
+.avatar{
+  width:26px;height:26px;border-radius:50%;background:var(--brand-2);color:#fff;
+  font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.comment .who b{color:var(--ink);font-size:13.5px}
+.comment p{font-size:14.2px;margin:0;color:var(--ink-soft)}
+.comment .ref{font-size:12.3px;color:var(--brand-2);margin-top:6px}
+.comment.neg{border-left-color:var(--accent)}
+
+/* 时间线 */
+.timeline{position:relative;padding-left:22px;margin:0;list-style:none}
+.timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(#f2b544,#12586e)}
+.timeline li{position:relative;margin-bottom:14px}
+.timeline li::before{
+  content:"";position:absolute;left:-22px;top:7px;width:10px;height:10px;border-radius:50%;
+  background:#fff;border:2px solid var(--brand-2);
+}
+.timeline b{display:block;font-size:14.5px;color:var(--ink)}
+.timeline span{font-size:13px;color:var(--muted)}
+
+/* 侧栏 */
+.side{display:grid;gap:16px;position:sticky;top:calc(var(--stick) + 14px)}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:15px 16px;box-shadow:var(--shadow-sm)}
+.panel h3{font-size:14.5px;color:var(--brand);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.panel h3::before{content:"";width:4px;height:14px;border-radius:2px;background:var(--accent-2)}
+.side-nav{list-style:none;padding:0;margin:0;display:grid;gap:1px}
+.side-nav a{
+  display:block;padding:7px 10px;border-radius:8px;font-size:13.8px;color:var(--ink-soft);
+  text-decoration:none!important;border-left:3px solid transparent;
+}
+.side-nav a:hover{background:#f0f5f6;color:var(--brand)}
+.side-nav a.on{background:#e8f0f2;color:var(--brand);font-weight:700;border-left-color:var(--accent)}
+.hotlist{list-style:none;padding:0;margin:0;counter-reset:h}
+.hotlist li{counter-increment:h;display:flex;gap:9px;font-size:13.6px;margin-bottom:8px;color:var(--ink-soft)}
+.hotlist li::before{
+  content:counter(h);flex-shrink:0;width:19px;height:19px;border-radius:6px;background:#eef4f5;
+  color:var(--brand-2);font-size:11.5px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:3px;
+}
+.hotlist li:nth-child(-n+3)::before{background:var(--accent-2);color:#3a2a05}
+.panel .note{font-size:12.5px;color:var(--muted);margin:8px 0 0}
+.panel .pulse{display:flex;align-items:baseline;gap:6px;font-size:12.8px;color:var(--ink-soft);margin-bottom:6px}
+.panel .pulse b{font-size:17px;color:var(--accent);font-variant-numeric:tabular-nums}
+
+/* 相关推荐 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:9px}
+.rec-tags .tag{font-size:13px;padding:5px 13px}
+
+/* 页尾 */
+.footer{
+  background:#0d2c38;color:#c7d8dd;margin-top:20px;padding:40px 0 26px;font-size:13.8px;
+}
+.footer-in{max-width:1180px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+.footer h4{color:#fff;font-size:14px;margin-bottom:10px;letter-spacing:.04em}
+.footer .fbrand{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.footer .fbrand svg{width:34px;height:34px}
+.footer .fbrand b{color:#fff;font-size:15.5px}
+.footer p{color:#a9c1c8;margin-bottom:.6em}
+.footer ul{list-style:none;padding:0;margin:0}
+.footer ul li{margin:5px 0}
+.footer a{color:#cfe2e7}
+.footer a:hover{color:#ffd98a}
+.footer .bottom{
+  max-width:1180px;margin:26px auto 0;padding:16px 20px 0;border-top:1px solid rgba(255,255,255,.13);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#89a6ae;
+}
+#toTop{
+  position:fixed;right:18px;bottom:22px;z-index:60;display:none;
+  background:var(--brand);color:#fff;border:0;border-radius:50%;width:44px;height:44px;
+  font-size:18px;cursor:pointer;box-shadow:var(--shadow);transition:transform .18s,background .18s;
+}
+#toTop:hover{background:var(--brand-2);transform:translateY(-3px)}
+#toTop.show{display:block}
+#toTop:focus-visible{outline:3px solid var(--accent-2);outline-offset:3px}
+
+/* 细分 */
+.split-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.factbox{background:#f2f8f8;border:1px dashed #b9d3d8;border-radius:var(--radius-sm);padding:13px 15px}
+.factbox h4{font-size:14px;color:var(--brand);margin-bottom:7px}
+.factbox ol,.factbox ul{padding-left:1.1em;font-size:13.7px;color:var(--ink-soft);margin:0}
+.quote-card{
+  background:linear-gradient(150deg,#fff,#fdf3ea);border:1px solid #f0d9c6;
+  border-radius:var(--radius);padding:18px;box-shadow:var(--shadow-sm);
+}
+.quote-card p{font-size:14.6px;color:#5a4238}
+.quote-card .who{font-size:12.5px;color:var(--muted);margin-top:6px}
+
+@media (max-width:1024px){
+  .layout{grid-template-columns:1fr}
+  .side{position:static;grid-template-columns:1fr 1fr;display:grid}
+  .hero-in{grid-template-columns:1fr;gap:24px}
+  .hero-art{order:-1;min-height:200px;max-width:440px}
+  .footer-in{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .nav{
+    display:none;position:absolute;left:12px;right:12px;top:100%;
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    box-shadow:var(--shadow);padding:8px;flex-direction:column;margin:0;
+  }
+  .nav.open{display:flex}
+  .header-in{position:relative;flex-wrap:wrap}
+  .menu-toggle{display:inline-block;margin-left:auto}
+  .search{order:3;width:100%}
+  .search input{width:100%;flex:1}
+  .g3,.g2,.split-2,.feature-grid,.cat-index{grid-template-columns:1fr}
+  .side{grid-template-columns:1fr}
+  .footer-in{grid-template-columns:1fr}
+  .article{padding:18px 16px}
+  .list li{grid-template-columns:minmax(0,1fr);gap:3px}
+  .list .src{justify-self:start}
+}
+@media (max-width:400px){
+  .wrap,.hero-in,.header-in,.announce-in{padding-left:14px;padding-right:14px}
+  body{font-size:15.5px}
+  .hero-stats{gap:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告与页头 -->
+<div class="sticky-wrap">
+  <div class="announce">
+    <div class="announce-in">
+      <span class="tag">更新</span>
+      <span>11月7日新收录「喷水梗」相关讨论 3 条、社区礼仪条目 1 条，术语表补入“车票”“楼中楼”两词。</span>
+      <a href="/#latest">查看最新更新</a>
+    </div>
+  </div>
+  <header class="header">
+    <div class="header-in">
+      <a class="brand" href="/#top" aria-label="海角大神会喷水的亲姐姐51 首页">
+        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#12586e"/><stop offset="1" stop-color="#0f3b4c"/>
+            </linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="15" fill="url(#bg)"/>
+          <path d="M9 44c9-15 17-5 23-15s11-11 21-14v11c-7 4-11 12-19 16S17 51 9 58z" fill="#f2b544"/>
+          <circle cx="47" cy="17" r="5.4" fill="#e8543f"/>
+          <path d="M16 22c4-3 8-3 12-1" stroke="#eaf3f5" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="brand-name">海角大神会喷水的亲姐姐51
+          <span class="brand-sub">COMMUNITY CULTURE NOTES</span>
+        </span>
+      </a>
+      <button class="menu-toggle" id="menuBtn" aria-expanded="false" aria-controls="mainNav">菜单</button>
+      <nav class="nav" id="mainNav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#picks">精选推荐</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#cats">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">用户评论</a>
+      </nav>
+      <div class="search">
+        <input type="search" id="q" placeholder="搜术语 / 板块 / 条目" aria-label="站内搜索">
+        <button type="button" id="searchBtn">搜索</button>
+        <div id="search-msg" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<div class="hero" id="top">
+  <div class="hero-in">
+    <div>
+      <span class="kicker">社区文化图解 · 第 51 期观察号</span>
+      <h1>海角大神会喷水的亲姐姐51</h1>
+      <p class="lead">围绕社区里的昵称、版块、创作类型与互动规矩做系统整理。从“喷水梗”为什么会被反复引用，到新人发帖前该核对哪几件事，这一站按条目、时间和来源逐项拆开，便于查证，也方便反驳。</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="/#deep">读深度解析</a>
+        <a class="btn btn-ghost" href="/#cats">按频道找内容</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>12</b><span>主题频道</span></div>
+        <div><b>34</b><span>术语条目</span></div>
+        <div><b>11.07</b><span>最近整理日期</span></div>
+        <div><b>51</b><span>观察序号</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 460 330">
+        <defs>
+          <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f2b544" stop-opacity=".95"/>
+            <stop offset="1" stop-color="#e8543f" stop-opacity=".9"/>
+          </linearGradient>
+        </defs>
+        <rect x="20" y="26" width="420" height="278" rx="20" fill="#ffffff" opacity=".07"/>
+        <rect x="20" y="26" width="420" height="278" rx="20" fill="none" stroke="#9fc4cd" stroke-width="1.4" opacity=".5"/>
+        <g fill="none" stroke="#9fc4cd" stroke-width="2" opacity=".55">
+          <path d="M44 92h150M44 116h108M44 140h132"/>
+          <path d="M44 196h96M44 220h140"/>
+        </g>
+        <circle cx="350" cy="86" r="34" fill="url(#sea)" opacity=".9"/>
+        <g fill="#eaf3f5" opacity=".9">
+          <rect x="244" y="166" width="168" height="14" rx="7"/>
+          <rect x="244" y="194" width="126" height="14" rx="7"/>
+          <rect x="244" y="222" width="148" height="14" rx="7"/>
+        </g>
+        <g stroke="#f2b544" stroke-width="3" stroke-linecap="round" fill="none">
+          <path d="M60 268c26 16 58 16 92 0"/>
+          <path d="M176 268c26 16 58 16 92 0"/>
+        </g>
+        <g fill="#e8543f">
+          <circle cx="120" cy="300" r="5"/><circle cx="230" cy="300" r="5"/><circle cx="340" cy="300" r="5"/>
+        </g>
+      </svg>
+      <div class="hero-badge">昵称拆解 · 版块地图 · 真假核对</div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="layout">
+    <main>
+
+      <!-- 1 领域概览 -->
+      <section class="sec" id="overview">
+        <div class="sec-head">
+          <span class="no">01</span>
+          <h2>领域概览：社区昵称、版块与创作类型</h2>
+        </div>
+        <p class="sec-lead">这类社区的内容围绕“分享—讨论—二次创作”转。昵称常由几个词拼起来，带绰号、序号和戏谑成分，理解它得先分清哪部分是人名、哪部分是固定梗。</p>
+        <div class="grid g3">
+          <div class="card">
+            <h3>昵称构成拆解</h3>
+            <p>“大神”“亲姐姐”“51”分别承担人设、关系和序号功能。序号用于区分多个同名主题帖子，不是评分。</p>
+            <div class="meta"><b>术语</b><span>昵称 12 例</span></div>
+          </div>
+          <div class="card">
+            <h3>内容形态分类</h3>
+            <p>正文帖、图片帖、连载帖、问答帖四类，互动量最高的是连载帖，更新节奏常见每周 1 更。</p>
+            <div class="meta"><b>形态</b><span>四类</span></div>
+          </div>
+          <div class="card">
+            <h3>社区礼仪底线</h3>
+            <p>转帖标注来源、不搬私聊截图、未核实信息加“待证实”前缀，这三条在版规里排在前面。</p>
+            <div class="meta"><b>版规</b><span>3 条前置</span></div>
+          </div>
+        </div>
+        <div class="split-2" style="margin-top:16px">
+          <div class="factbox">
+            <h4>领域专属词覆盖（12/20）</h4>
+            <ol>
+              <li>喷水梗、楼中楼、车票、搬运工</li>
+              <li>连载帖、图片帖、问答帖、正文帖</li>
+              <li>序号帖、版规前置、待证实前缀、二次创作</li>
+            </ol>
+          </div>
+          <div class="factbox">
+            <h4>新手最先要分清的三个区别</h4>
+            <ul>
+              <li>昵称里的数字是序号，不是热度分</li>
+              <li>梗图属于转载，不等于作者原创</li>
+              <li>评论区讨论与正文立场可能不同</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 精选内容推荐 -->
+      <section class="sec" id="picks">
+        <div class="sec-head">
+          <span class="no">02</span>
+          <h2>精选内容推荐：本期值得先读的六条</h2>
+          <p>按可读性与信息密度挑，不按点赞排</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-main">
+            <img class="thumb" src="https://picsum.photos/seed/haijiao51a/720/260" alt="社区帖子列表截图风格的桌面画面" width="720" height="260" loading="lazy">
+            <h3>「喷水梗」三次出圈的时间线整理</h3>
+            <p>从 10 月 18 日的首帖，到 11 月 2 日被搬运到外部平台，再到 11 月 6 日原帖作者回应，三段时间各自发生了什么，逐条对应截图编号与楼层号。</p>
+            <div class="tag-row">
+              <a class="tag" href="/#deep">梗来源考证</a>
+              <a class="tag" href="/#latest">时间线</a>
+            </div>
+          </article>
+          <div class="feature-side">
+            <div class="mini"><strong>连载帖《隔壁的观察笔记》第 12 更</strong><span>11月5日 · 更新间隔 9 天</span></div>
+            <div class="mini"><strong>问答帖：序号帖为什么容易撞名</strong><span>11月4日 · 27 条回复</span></div>
+            <div class="mini"><strong>版规 3.2 修订前后对照</strong><span>11月1日 · 涉及转载标注</span></div>
+            <div class="mini"><strong>术语卡片：车票、搬运工、楼中楼</strong><span>10月30日 · 新增 3 词</span></div>
+            <div class="mini"><strong>用户自述：我为什么停止搬运</strong><span>10月27日 · 约 900 字</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 最新更新 -->
+      <section class="sec" id="latest">
+        <div class="sec-head">
+          <span class="no">03</span>
+          <h2>最新更新：近七日条目变动</h2>
+        </div>
+        <ul class="list">
+          <li><span class="date">11月7日</span><span class="t"><a href="/#faq">术语表补入“车票”“楼中楼”，并给出使用场景示例</a></span><span class="src">术语</span></li>
+          <li><span class="date">11月6日</span><span class="t"><a href="/#deep">原帖作者对搬运事件的回应已归档，含原文措辞</a></span><span class="src">事件</span></li>
+          <li><span class="date">11月5日</span><span class="t"><a href="/#guide">《隔壁的观察笔记》第 12 更，评论区新增 41 楼</a></span><span class="src">连载</span></li>
+          <li><span class="date">11月4日</span><span class="t"><a href="/#cats">问答帖“序号帖撞名”被并入昵称分类</a></span><span class="src">问答</span></li>
+          <li><span class="date">11月2日</span><span class="t"><a href="/#deep">外部平台出现二次搬运帖，转载标注缺失</a></span><span class="src">转载</span></li>
+          <li><span class="date">11月1日</span><span class="t"><a href="/#overview">版规 3.2 修订：转载须附原帖链接与楼层号</a></span><span class="src">版规</span></li>
+        </ul>
+      </section>
+
+      <!-- 4 分类入口 -->
+      <section class="sec" id="cats">
+        <div class="sec-head">
+          <span class="no">04</span>
+          <h2>分类入口：12 个常用频道</h2>
+        </div>
+        <div class="cat-index">
+          <a class="cat-item" href="/#deep"><span class="n">梗来源考证</span><span class="c">18 条</span></a>
+          <a class="cat-item" href="/#latest"><span class="n">连载帖追踪</span><span class="c">9 条</span></a>
+          <a class="cat-item" href="/#guide"><span class="n">新成员上手</span><span class="c">11 条</span></a>
+          <a class="cat-item" href="/#faq"><span class="n">社区术语表</span><span class="c">34 词</span></a>
+          <a class="cat-item" href="/#overview"><span class="n">昵称拆解</span><span class="c">12 例</span></a>
+          <a class="cat-item" href="/#latest"><span class="n">版规修订记录</span><span class="c">6 次</span></a>
+          <a class="cat-item" href="/#comments"><span class="n">用户自述</span><span class="c">15 篇</span></a>
+          <a class="cat-item" href="/#picks"><span class="n">图片帖精选</span><span class="c">22 组</span></a>
+          <a class="cat-item" href="/#news"><span class="n">转载与出处</span><span class="c">7 条</span></a>
+          <a class="cat-item" href="/#rank"><span class="n">热度榜单</span><span class="c">周更</span></a>
+          <a class="cat-item" href="/#guide"><span class="n">发帖礼仪</span><span class="c">8 条</span></a>
+          <a class="cat-item" href="/#faq"><span class="n">真假信息辨别</span><span class="c">10 条</span></a>
+        </div>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section class="sec" id="deep">
+        <div class="sec-head">
+          <span class="no">05</span>
+          <h2>深度解析：昵称、序号与“喷水梗”的三处分歧</h2>
+        </div>
+        <article class="article">
+          <p>把这段社区文化当整体看，很容易得出“就是玩梗”的结论。逐条对时间戳就会发现，昵称的功能、序号的用途、喷水梗的归属，三件事在近一个月里都出现过明显分歧，且每一处分歧都能落到具体楼层和日期。</p>
+
+          <h3>一、昵称的“大神”是自称还是他称，11月3日出现分叉</h3>
+          <p>10月20日的首帖里，“大神”出现在发帖人自述段落，句式是“随便叫大神就行”。11月3日 21:37，另一账号在 38 楼回复时把“大神”写成第三人称指代。两种用法并存后，新成员容易误以为有两个不同作者。</p>
+          <div class="claim">
+            <b>可核对判断：</b>昵称中的“大神”在 10 月 20 日至 11 月 3 日之间，主要作为自称出现；11 月 3 日 38 楼之后，他称用法增加。核对方式是按楼层号检索两段原文，而不是看转述帖。
+          </div>
+          <p>这个判断是可以被反驳的：如果 11 月 3 日之前已有他称用例，时间界线就要前移。目前公开可见的楼层里，最早的他称出现在 38 楼，样本量约 60 条回复。</p>
+
+          <h3>二、序号“51”到底指第几期，两版说法并存</h3>
+          <p>一说指观察序号，一说指第 51 个同系列帖子。11月1日版规修订时，管理员在公告里写的是“系列编号沿用”，但没写明从哪一期起算。</p>
+          <table class="compare">
+            <caption>两种序号解释的对照（截至 11月7日）</caption>
+            <thead><tr><th>说法</th><th>依据</th><th>可反驳点</th></tr></thead>
+            <tbody>
+              <tr><td>观察序号</td><td>站内条目按周编号，51 对应当周第 51 条整理记录</td><td>早期编号不连续，10 月 9 日至 10 月 15 日缺 3 期</td></tr>
+              <tr><td>系列帖序号</td><td>连载帖标题普遍带两位序号，51 与第 51 更时间接近</td><td>第 51 更尚未发布，现有最新为第 12 更</td></tr>
+            </tbody>
+          </table>
+          <p>按现有材料，观察序号一说证据更完整，但仍缺 10 月中旬的编号记录。谁手上有 10 月 9 日至 15 日的原始截图，可以直接推翻或补强。</p>
+
+          <h3>三、喷水梗的归属：原帖、搬运帖、二次创作各不相同</h3>
+          <p>10月18日 14:20 的首帖给出了具体场景描述，11月2日外部平台出现搬运帖，删去原帖链接，只留图片。11月6日原帖作者回应，措辞是“图可以用，链接别删”，这句话被转述成“作者授权所有转载”，属于转述偏差。</p>
+          <blockquote>
+            “图可以用，链接别删。”——原帖作者 11月6日 19:12 于原帖 72 楼
+            <cite>转述版本在外部平台被简化为“已获授权”，与原文条件不符。</cite>
+          </blockquote>
+          <p>事实层：原帖时间、楼层号、原文措辞均可核。回应层：作者只对图片使用表态，未谈改编。转述层：外部平台把条件句改成结论句。推测层：搬运方可能为避免争议而简化表述，但无直接证据。</p>
+
+          <h3>四、把判断拆成可核对项</h3>
+          <div class="factbox">
+            <h4>四项核对清单</h4>
+            <ol>
+              <li>昵称自称/他称分界：11月3日 38 楼，样本约 60 条回复</li>
+              <li>序号解释：两说并存，观察序号证据更完整，缺 10 月中旬编号</li>
+              <li>喷水梗归属：原帖 10月18日，搬运 11月2日，回应 11月6日</li>
+              <li>授权范围：仅图片，不含改编，原文为条件句</li>
+            </ol>
+          </div>
+          <p>分歧不等于造假。多数情况下是同一素材在不同平台被截断，读者只看到后半段。核对顺序建议先看时间戳，再看楼层号，最后比对原文措辞。</p>
+        </article>
+      </section>
+
+      <!-- 6 体验指南 -->
+      <section class="sec" id="guide">
+        <div class="sec-head">
+          <span class="no">06</span>
+          <h2>体验指南：新成员发帖前的六步</h2>
+        </div>
+        <ol class="steps">
+          <li><b>先读版规前置三条。</b>转载标注、私聊截图、待证实前缀，这三条覆盖了大部分被删帖原因。</li>
+          <li><b>确认昵称与序号不撞名。</b>发帖前搜一次序号，撞名时改序号而不是改主题词，避免后续检索混乱。</li>
+          <li><b>给素材标来源。</b>原帖链接、楼层号、截图日期三样至少写两样，缺一样时在正文加“来源待补”。</li>
+          <li><b>区分正文与评论立场。</b>正文写事实，评论写看法，二者混在一起时，后来者很难判断哪句是作者原话。</li>
+          <li><b>连载帖固定更新节奏。</b>每周一更比不定期更新更容易被追更，间隔超过 14 天时在标题注明“缓更”。</li>
+          <li><b>遇到争议先存证。</b>截图保留时间与楼层，比事后口述更有用，也方便他人核对。</li>
+        </ol>
+      </section>
+
+      <!-- 7 FAQ -->
+      <section class="sec" id="faq">
+        <div class="sec-head">
+          <span class="no">07</span>
+          <h2>常见问答：术语、序号与转载</h2>
+        </div>
+        <details>
+          <summary>“喷水梗”具体指什么，为什么会被反复引用？</summary>
+          <div class="a">它源自 10 月 18 日一条带场景描述的帖子，因画面感强被截图传播。反复引用是因为短、易改、适配多种语境。使用时最好附原帖日期，避免变成无出处口头禅。</div>
+        </details>
+        <details>
+          <summary>昵称里的“51”是评分还是期数？</summary>
+          <div class="a">现有材料更支持“观察序号”解释，与每周整理条目对应。系列帖序号一说也有依据，但第 51 更尚未发布，证据链不完整。两种说法在 11 月上旬仍并存。</div>
+        </details>
+        <details>
+          <summary>搬运帖删掉原链接，算不算违规？</summary>
+          <div class="a">按 11 月 1 日修订的版规 3.2，转载须附原帖链接与楼层号。删链接属于程序违规，是否追加处理看搬运方是否在 48 小时内补链。目前外部平台那帖未补。</div>
+        </details>
+        <details>
+          <summary>“车票”和“楼中楼”分别指什么？</summary>
+          <div class="a">车票指进入某个连载帖的入口提示，通常出现在标题或首楼；楼中楼指在回复里再开一层讨论。两者都是检索高频词，术语表 11 月 7 日补入。</div>
+        </details>
+        <details>
+          <summary>评论区说法和正文冲突时，信哪个？</summary>
+          <div class="a">先看时间戳与楼层号。正文若早于评论，评论可能是补充或更正；若评论早于正文，正文可能吸收了评论意见。两者都缺来源时，按“待证实”处理。</div>
+        </details>
+        <details>
+          <summary>连载帖断更多久算弃坑？</summary>
+          <div class="a">社区里较常见的判定是连续 30 天无更新且作者未说明。10 月 27 日有一篇自述提到“停更不是弃坑”，说明作者与读者的判定标准并不一致。</div>
+        </details>
+      </section>
+
+      <!-- 8 用户评论 -->
+      <section class="sec" id="comments">
+        <div class="sec-head">
+          <span class="no">08</span>
+          <h2>用户评论：对具体条目的不同看法</h2>
+        </div>
+        <div class="comments">
+          <div class="comment">
+            <div class="who"><span class="avatar">林</span><b>林间旧事</b><span>11月7日 09:14</span></div>
+            <p>序号那节我同意观察序号说。10 月中旬缺的三期我有截图，编号确实断过，断的原因不是停更，是整理表换了模板。</p>
+            <div class="ref">指向：序号解释对照表</div>
+          </div>
+          <div class="comment neg">
+            <div class="who"><span class="avatar">阿</span><b>阿岚不加班</b><span>11月6日 22:40</span></div>
+            <p>喷水梗那段的“推测层”写得有点满。搬运方简化表述未必是为了避争议，也可能就是图省字数。没有聊天记录之前，这条推测可以再收一收。</p>
+            <div class="ref">指向：喷水梗归属第三段</div>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">陈</span><b>陈皮三克</b><span>11月6日 18:02</span></div>
+            <p>体验指南第 3 步很实用。我上次发帖只写了“来源网上”，被提醒后补了楼层号，帖子才留下来。建议把“来源待补”的写法也举一个例子。</p>
+            <div class="ref">指向：体验指南第 3 步</div>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">周</span><b>周末修图</b><span>11月5日 13:27</span></div>
+            <p>《隔壁的观察笔记》第 12 更的字数比第 11 更少了大概三成，节奏快了但细节薄了。追更的人里有说好的，也有说退回第 9 更水平的。</p>
+            <div class="ref">指向：精选推荐连载条目</div>
+          </div>
+          <div class="comment neg">
+            <div class="who"><span class="avatar">老</span><b>老猫晒太阳</b><span>11月4日 20:55</span></div>
+            <p>FAQ 里“断更 30 天算弃坑”这个说法太整齐了。有的帖两个月不更，回来补一句“在整理素材”，照样有人追。标准是活的。</p>
+            <div class="ref">指向：FAQ 连载断更条目</div>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">许</span><b>许愿不熬夜</b><span>11月3日 11:08</span></div>
+            <p>昵称拆解里说“亲姐姐”承担关系功能，我觉得更多是语气功能，用来拉近距离，不一定真指亲属关系。这点可以再分开讲。</p>
+            <div class="ref">指向：领域概览昵称构成</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 相关资讯 -->
+      <section class="sec" id="news">
+        <div class="sec-head">
+          <span class="no">09</span>
+          <h2>相关资讯：转载出处与平台规则变动</h2>
+        </div>
+        <div class="grid g2">
+          <div class="card">
+            <h3>外部平台 11月2日转载帖未附原链接</h3>
+            <p>该帖保留图片、删去原帖地址，评论区有 6 条询问出处未获回复。按站内版规 3.2，属程序违规。</p>
+            <div class="meta"><b>11月2日</b><span>转载</span></div>
+          </div>
+          <div class="card">
+            <h3>站内版规 3.2 修订生效</h3>
+            <p>转载须附原帖链接与楼层号，48 小时内可补。修订前无此要求，10 月旧帖不追溯。</p>
+            <div class="meta"><b>11月1日</b><span>版规</span></div>
+          </div>
+          <div class="card">
+            <h3>术语表新增两词，检索量上升</h3>
+            <p>“车票”“楼中楼”补入后，站内搜索这两词的次数在 11月7日当天增加。具体数字未公开。</p>
+            <div class="meta"><b>11月7日</b><span>术语</span></div>
+          </div>
+          <div class="card">
+            <h3>原帖作者回应授权范围</h3>
+            <p>11月6日 19:12 于 72 楼表态，仅谈图片使用，未涉及改编。转述版本与原文有出入。</p>
+            <div class="meta"><b>11月6日</b><span>回应</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 相关推荐 -->
+      <section class="sec" id="rec">
+        <div class="sec-head">
+          <span class="no">10</span>
+          <h2>相关推荐：按关键词继续查</h2>
+        </div>
+        <div class="rec-tags">
+          <a class="tag" href="/#deep">喷水梗来源考证</a>
+          <a class="tag" href="/#faq">社区术语表车票</a>
+          <a class="tag" href="/#overview">昵称序号撞名怎么办</a>
+          <a class="tag" href="/#latest">连载帖更新节奏</a>
+          <a class="tag" href="/#guide">转载标注版规 3.2</a>
+          <a class="tag" href="/#comments">停更不是弃坑</a>
+          <a class="tag accent" href="/#news">搬运帖删链接</a>
+          <a class="tag" href="/#deep">授权范围条件句</a>
+          <a class="tag" href="/#guide">新成员发帖六步</a>
+        </div>
+      </section>
+
+      <!-- 11 榜单 -->
+      <section class="sec" id="rank">
+        <div class="sec-head">
+          <span class="no">11</span>
+          <h2>本周榜单：讨论量前五的条目</h2>
+          <p>统计区间 11月1日至11月7日，按回复楼层去重</p>
+        </div>
+        <div class="split-2">
+          <ol class="list" style="padding-left:0">
+            <li><span class="date">01</span><span class="t">喷水梗三次出圈时间线</span><span class="src">146 楼</span></li>
+            <li><span class="date">02</span><span class="t">原帖作者 72 楼回应</span><span class="src">98 楼</span></li>
+            <li><span class="date">03</span><span class="t">连载《隔壁的观察笔记》第 12 更</span><span class="src">74 楼</span></li>
+            <li><span class="date">04</span><span class="t">版规 3.2 修订讨论</span><span class="src">61 楼</span></li>
+            <li><span class="date">05</span><span class="t">昵称 51 两种解释</span><span class="src">53 楼</span></li>
+          </ol>
+          <div class="quote-card">
+            <p>“我更关心谁先发了截图，而不是谁点赞多。点赞能刷，时间戳刷不了。”</p>
+            <div class="who">——用户自述《我为什么停止搬运》，10月27日</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 侧栏 -->
+    <aside class="side" aria-label="侧栏导航与热点">
+      <div class="panel">
+        <h3>栏目导航</h3>
+        <nav aria-label="侧栏栏目导航">
+          <ul class="side-nav" id="sideNav">
+            <li><a href="/#overview">01 领域概览</a></li>
+            <li><a href="/#picks">02 精选推荐</a></li>
+            <li><a href="/#latest">03 最新更新</a></li>
+            <li><a href="/#cats">04 分类入口</a></li>
+            <li><a href="/#deep">05 深度解析</a></li>
+            <li><a href="/#guide">06 体验指南</a></li>
+            <li><a href="/#faq">07 常见问答</a></li>
+            <li><a href="/#comments">08 用户评论</a></li>
+            <li><a href="/#news">09 相关资讯</a></li>
+            <li><a href="/#rec">10 相关推荐</a></li>
+            <li><a href="/#rank">11 本周榜单</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="panel">
+        <h3>本周关注</h3>
+        <div class="pulse"><b>38</b><span>11月3日 38 楼他称用例</span></div>
+        <div class="pulse"><b>72</b><span>11月6日作者回应楼层</span></div>
+        <div class="pulse"><b>3</b><span>喷水梗出圈节点</span></div>
+        <p class="note">侧栏数字与正文条目一一对应，楼层号可在对应板块核对。</p>
+      </div>
+      <div class="panel">
+        <h3>高频术语</h3>
+        <div class="tag-row">
+          <a class="tag" href="/#faq">喷水梗</a>
+          <a class="tag" href="/#faq">楼中楼</a>
+          <a class="tag" href="/#faq">车票</a>
+          <a class="tag" href="/#overview">序号帖</a>
+          <a class="tag" href="/#guide">待证实前缀</a>
+          <a class="tag" href="/#news">搬运工</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- 页尾 -->
+<footer class="footer">
+  <div class="footer-in">
+    <div>
+      <div class="fbrand">
+        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <rect width="64" height="64" rx="15" fill="#12586e"/>
+          <path d="M9 44c9-15 17-5 23-15s11-11 21-14v11c-7 4-11 12-19 16S17 51 9 58z" fill="#f2b544"/>
+          <circle cx="47" cy="17" r="5.4" fill="#e8543f"/>
+        </svg>
+        <b>海角大神会喷水的亲姐姐51</b>
+      </div>
+      <p>把社区昵称、序号、术语和转载规则拆成可核对的条目，给愿意查证的人用。</p>
+      <p>页脚更新时间：2026年11月8日。对应的正文可核对项：11月7日术语表补词、11月6日作者回应归档、11月1日版规 3.2 修订。</p>
+    </div>
+    <div>
+      <h4>频道分组</h4>
+      <ul>
+        <li><a href="/#overview">领域概览与昵称</a></li>
+        <li><a href="/#deep">深度解析</a></li>
+        <li><a href="/#faq">术语与问答</a></li>
+        <li><a href="/#guide">体验指南</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>查证入口</h4>
+      <ul>
+        <li><a href="/#latest">近七日更新</a></li>
+        <li><a href="/#news">转载出处</a></li>
+        <li><a href="/#comments">用户自述</a></li>
+        <li><a href="/#rank">本周榜单</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">
+    <span>示例数据说明：本页条目、楼层号与日期为演示用示例，实际信息以原帖为准。</span>
+    <span>© 2026 社区文化图解 · 观察序号 51</span>
+  </div>
+</footer>
+
+<button id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  var nav=document.getElementById('mainNav');
+  if(menuBtn&&nav){
+    menuBtn.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded',open?'true':'false');
+    });
+    nav.addEventListener('click',function(e){
+      if(e.target.tagName==='A'&&window.innerWidth<=760){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  var q=document.getElementById('q');
+  var btn=document.getElementById('searchBtn');
+  var msg=document.getElementById('search-msg');
+  function doSearch(){
+    if(!q||!msg)return;
+    var kw=q.value.trim().toLowerCase();
+    if(!kw){msg.style.display='none';msg.textContent='';return;}
+    var targets=document.querySelectorAll('main .card, main .list li, main .comment, main details, main .feature-main, main .mini, main .cat-item, main .tag, main .factbox li');
+    var hit=null,count=0;
+    for(var i=0;i<targets.length;i++){
+      var t=(targets[i].textContent||'').toLowerCase();
+      if(t.indexOf(kw)>-1){count++;if(!hit)hit=targets[i];}
+    }
+    if(count===0){
+      msg.style.display='block';
+      msg.textContent='没有找到“'+q.value.trim()+'”，试试“喷水梗”“序号”“车票”“版规”等具体词。';
+    }else{
+      msg.style.display='block';
+      msg.textContent='找到 '+count+' 处相关内容，已定位到第一条。';
+      hit.scrollIntoView({behavior:'smooth',block:'center'});
+    }
+  }
+  if(btn)btn.addEventListener('click',doSearch);
+  if(q)q.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();doSearch();}});
+
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>560){toTop.classList.add('show');}
+    else{toTop.classList.remove('show');}
+  },{passive:true});
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  var sideLinks=Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var secs=sideLinks.map(function(a){
+    var id=a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  }).filter(Boolean);
+  if('IntersectionObserver' in window&&secs.length){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          sideLinks.forEach(function(a){
+            a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id||a.getAttribute('href')==='/'+'#'+en.target.id);
+          });
+        }
+      });
+    },{rootMargin:'-120px 0px -60% 0px',threshold:0});
+    secs.forEach(function(s){io.observe(s);});
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"海角大神会喷水的亲姐姐51",
+  "description":"围绕网络社区昵称、版块、创作类型与互动礼仪展开的条目化整理站。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"“喷水梗”具体指什么，为什么会被反复引用？","acceptedAnswer":{"@type":"Answer","text":"它源自 10 月 18 日一条带场景描述的帖子，因画面感强被截图传播。反复引用是因为短、易改、适配多种语境。使用时最好附原帖日期。"}},
+    {"@type":"Question","name":"昵称里的“51”是评分还是期数？","acceptedAnswer":{"@type":"Answer","text":"现有材料更支持“观察序号”解释，与每周整理条目对应。系列帖序号一说也有依据，但第 51 更尚未发布，证据链不完整。"}},
+    {"@type":"Question","name":"搬运帖删掉原链接，算不算违规？","acceptedAnswer":{"@type":"Answer","text":"按 11 月 1 日修订的版规 3.2，转载须附原帖链接与楼层号。删链接属于程序违规，是否追加处理看搬运方是否在 48 小时内补链。"}},
+    {"@type":"Question","name":"“车票”和“楼中楼”分别指什么？","acceptedAnswer":{"@type":"Answer","text":"车票指进入某个连载帖的入口提示，通常出现在标题或首楼；楼中楼指在回复里再开一层讨论。两者都是检索高频词。"}},
+    {"@type":"Question","name":"评论区说法和正文冲突时，信哪个？","acceptedAnswer":{"@type":"Answer","text":"先看时间戳与楼层号。正文若早于评论，评论可能是补充或更正；若评论早于正文，正文可能吸收了评论意见。两者都缺来源时按待证实处理。"}},
+    {"@type":"Question","name":"连载帖断更多久算弃坑？","acceptedAnswer":{"@type":"Answer","text":"社区里较常见的判定是连续 30 天无更新且作者未说明。10 月 27 日有一篇自述提到停更不是弃坑，说明作者与读者的判定标准并不一致。"}}
+  ]
+}
+</script>
+</body>
+                  </html>
