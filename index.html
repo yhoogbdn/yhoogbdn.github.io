@@ -1,0 +1,1095 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>玩物社区插嘴-模玩藏品交易与鉴定交流</title>
+<meta name="description" content="玩物社区插嘴是模玩藏家交流交易的前台。这里汇总十一月的补款时间表、高达与奥特曼卡册的批次差异、二手验货口径、价格拐点判断，以及藏家对具体条目的实测吐槽与提醒。">
+<meta name="keywords" content="玩物社区插嘴">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d2b3a'/%3E%3Cpath d='M8 21l4-10 4 7 4-9 4 12' stroke='%23e8b04b' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1c2430;
+  --ink-2:#48566a;
+  --ink-3:#73839a;
+  --line:#dde3ec;
+  --line-2:#c7d0dd;
+  --bg:#f5f7fa;
+  --card:#ffffff;
+  --brand:#1d2b3a;
+  --brand-2:#2f4a63;
+  --accent:#c98a1e;
+  --accent-soft:#fdf3df;
+  --ok:#2c7a5b;
+  --warn:#a8562c;
+  --radius:12px;
+  --radius-s:8px;
+  --shadow:0 1px 2px rgba(20,32,48,.06),0 6px 18px rgba(20,32,48,.05);
+  --shadow-hover:0 2px 4px rgba(20,32,48,.07),0 10px 24px rgba(20,32,48,.09);
+  --sp-1:6px;--sp-2:12px;--sp-3:18px;--sp-4:28px;--sp-5:44px;
+  --fs-h1:clamp(1.6rem,3.4vw,2.4rem);
+  --fs-h2:1.28rem;
+  --fs-h3:1.02rem;
+  --fs-body:.94rem;
+  --fs-small:.82rem;
+  --anchor-off:104px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  font-size:var(--fs-body);line-height:1.75;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;display:block}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 var(--sp-2)}
+ul,ol{margin:0 0 var(--sp-2);padding-left:1.25em}
+li{margin:2px 0}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* 吸顶区 */
+.sticky-top{position:sticky;top:0;z-index:60}
+.notice{
+  background:var(--brand);color:#e9eef5;font-size:var(--fs-small);
+  padding:7px 16px;display:flex;gap:10px;align-items:center;justify-content:center;
+  flex-wrap:wrap;text-align:center;
+}
+.notice strong{color:var(--accent);font-weight:700}
+.notice .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);display:inline-block}
+.site-head{
+  background:rgba(255,255,255,.96);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);box-shadow:0 1px 0 rgba(28,36,48,.03);
+}
+.head-inner{
+  max-width:1180px;margin:0 auto;padding:10px 16px;
+  display:flex;align-items:center;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:9px;flex-shrink:0}
+.brand svg{width:32px;height:32px;flex-shrink:0}
+.brand-text{font-weight:800;font-size:1.06rem;letter-spacing:.5px;color:var(--brand);white-space:nowrap}
+.main-nav{display:flex;gap:2px;flex-wrap:wrap;flex:1;min-width:0}
+.main-nav a{
+  font-size:.86rem;color:var(--ink-2);padding:6px 9px;border-radius:var(--radius-s);
+  white-space:nowrap;
+}
+.main-nav a:hover{background:var(--accent-soft);color:var(--brand);text-decoration:none}
+.nav-toggle{
+  display:none;background:var(--brand);color:#fff;border:0;border-radius:var(--radius-s);
+  padding:7px 13px;font-size:.84rem;cursor:pointer;font-family:inherit;
+}
+.head-tools{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.search-box{position:relative}
+.search-box input{
+  font-family:inherit;font-size:.83rem;padding:7px 10px;width:150px;
+  border:1px solid var(--line-2);border-radius:999px;background:#fff;color:var(--ink);
+}
+.search-box input:focus{border-color:var(--brand-2);outline:none;box-shadow:0 0 0 3px rgba(47,74,99,.12)}
+.search-result{
+  position:absolute;top:calc(100% + 6px);right:0;width:260px;max-height:300px;overflow:auto;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-s);box-shadow:var(--shadow);
+  font-size:.82rem;padding:6px;display:none;
+}
+.search-result.open{display:block}
+.search-result a{display:block;padding:6px 8px;border-radius:6px;color:var(--ink)}
+.search-result a:hover{background:var(--bg);text-decoration:none}
+.search-result .empty{color:var(--ink-3);padding:10px 8px}
+
+/* 骨架 */
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.layout{
+  display:grid;grid-template-columns:minmax(0,1fr) 300px;
+  gap:26px;padding:26px 0 40px;align-items:start;
+}
+main{min-width:0}
+section[id],div[id].anchor{scroll-margin-top:var(--anchor-off)}
+
+/* 首屏 */
+.hero{
+  background:linear-gradient(160deg,#1d2b3a 0%,#294055 58%,#334f66 100%);
+  color:#eef3f8;position:relative;overflow:hidden;
+}
+.hero-inner{
+  max-width:1180px;margin:0 auto;padding:40px 16px 44px;
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:30px;align-items:center;position:relative;z-index:2;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:7px;font-size:.76rem;letter-spacing:1.5px;
+  color:var(--accent);border:1px solid rgba(201,138,30,.5);border-radius:999px;
+  padding:3px 12px;margin-bottom:14px;
+}
+.hero h1{font-size:var(--fs-h1);letter-spacing:1px;margin-bottom:14px;color:#fff}
+.hero-lead{color:#c9d6e3;font-size:.95rem;max-width:520px;margin-bottom:20px}
+.hero-lead b{color:#fff;font-weight:600}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.btn{
+  display:inline-block;padding:9px 20px;border-radius:999px;font-size:.88rem;
+  font-weight:600;border:1px solid transparent;cursor:pointer;font-family:inherit;
+}
+.btn-primary{background:var(--accent);color:#20272f}
+.btn-primary:hover{background:#dc9a2c;text-decoration:none}
+.btn-ghost{border-color:rgba(255,255,255,.42);color:#eef3f8}
+.btn-ghost:hover{background:rgba(255,255,255,.1);text-decoration:none}
+.hero-stats{display:flex;gap:24px;flex-wrap:wrap}
+.hero-stats div{min-width:76px}
+.hero-stats b{display:block;font-size:1.32rem;color:#fff;font-weight:800;line-height:1.2}
+.hero-stats span{font-size:.76rem;color:#9fb3c7}
+.hero-art{position:relative;height:250px}
+.hero-art svg{width:100%;height:100%;display:block}
+.hero-art .bubble{
+  position:absolute;font-size:.72rem;background:rgba(255,255,255,.93);color:var(--brand);
+  padding:3px 9px;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,.18);
+}
+
+/* 通用板块 */
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.block{padding:24px 22px;margin-bottom:22px}
+.block-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.block-head h2{font-size:var(--fs-h2)}
+.block-head .link-more{font-size:.8rem;color:var(--ink-3)}
+.block-sub{font-size:.8rem;color:var(--ink-3);margin:0 0 var(--sp-3);border-bottom:1px dashed var(--line);padding-bottom:10px}
+.section-tag{
+  display:inline-block;font-size:.7rem;letter-spacing:1px;color:var(--accent);
+  border:1px solid rgba(201,138,30,.45);border-radius:4px;padding:0 6px;margin-right:8px;
+  vertical-align:2px;font-weight:700;
+}
+h3{font-size:var(--fs-h3);margin:16px 0 6px}
+.muted{color:var(--ink-3);font-size:var(--fs-small)}
+.meta{font-size:.76rem;color:var(--ink-3)}
+.pill{
+  display:inline-block;font-size:.72rem;padding:1px 8px;border-radius:999px;
+  border:1px solid var(--line-2);color:var(--ink-2);background:#fff;margin:2px 4px 2px 0;
+}
+.pill:hover{background:var(--accent-soft);border-color:rgba(201,138,30,.5);text-decoration:none}
+.pill-accent{background:var(--accent-soft);border-color:rgba(201,138,30,.55);color:#8a5c0b}
+
+/* 概览 */
+.overview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ov-cell{
+  border:1px solid var(--line);border-radius:var(--radius-s);padding:12px 12px 10px;background:#fbfcfe;
+}
+.ov-cell b{display:block;font-size:1.1rem;color:var(--brand);line-height:1.25}
+.ov-cell span{font-size:.76rem;color:var(--ink-3);display:block;margin-top:2px}
+.ov-note{font-size:.82rem;color:var(--ink-2);margin-top:14px;padding-left:12px;border-left:3px solid var(--accent)}
+
+/* 精选卡片网格 */
+.pick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+.pick-card{
+  border:1px solid var(--line);border-radius:var(--radius-s);overflow:hidden;background:#fff;
+  display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease;
+}
+.pick-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.pick-card img{width:100%;height:118px;object-fit:cover;background:#e8ecf2}
+.pick-body{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
+.pick-body h4{font-size:.9rem;margin:0}
+.pick-body p{font-size:.8rem;color:var(--ink-2);margin:0;flex:1}
+.pick-body .meta{margin-top:4px}
+
+/* 紧凑列表 */
+.tight-list{list-style:none;padding:0;margin:8px 0 0}
+.tight-list li{
+  display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:12px;
+  padding:9px 0;border-bottom:1px solid var(--line);align-items:baseline;font-size:.86rem;
+}
+.tight-list li:last-child{border-bottom:0}
+.tight-list time{font-size:.76rem;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.tight-list .tag{font-size:.7rem;color:var(--ok);border:1px solid rgba(44,122,91,.35);border-radius:4px;padding:0 5px;white-space:nowrap}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:10px}
+.cat-item{
+  display:block;border:1px solid var(--line);border-radius:var(--radius-s);
+  padding:11px 12px;background:#fbfcfe;transition:border-color .15s ease,background .15s ease;
+}
+.cat-item:hover{border-color:var(--brand-2);background:#fff;text-decoration:none}
+.cat-item strong{display:block;font-size:.87rem;color:var(--brand)}
+.cat-item span{font-size:.73rem;color:var(--ink-3)}
+
+/* 深度解析 */
+.deep{background:#fff}
+.deep h2{font-size:1.36rem}
+.deep .lead-para{font-size:.94rem;color:var(--ink-2)}
+.deep h3{border-left:3px solid var(--accent);padding-left:10px;margin-top:22px}
+.deep blockquote{
+  margin:14px 0;padding:12px 16px;background:var(--accent-soft);
+  border-left:4px solid var(--accent);border-radius:0 var(--radius-s) var(--radius-s) 0;
+  font-size:.9rem;color:#5c4310;
+}
+.check-table{width:100%;border-collapse:collapse;font-size:.82rem;margin:10px 0 4px}
+.check-table th,.check-table td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+.check-table th{background:#f2f5f9;font-weight:700;color:var(--brand);white-space:nowrap}
+.fact-tag{font-size:.68rem;border-radius:3px;padding:0 5px;margin-right:5px;font-weight:700;white-space:nowrap}
+.t-fact{background:#e3f1ea;color:#1f6549}
+.t-reply{background:#e6edf6;color:#2b4d73}
+.t-quote{background:#f3e9f6;color:#6a3d7c}
+.t-guess{background:#fbeee2;color:#8a4f1c}
+
+/* 指南步骤 */
+.steps{counter-reset:st;list-style:none;padding:0;margin:10px 0 0}
+.steps li{
+  counter-increment:st;position:relative;padding:10px 0 10px 44px;border-bottom:1px dashed var(--line);
+  font-size:.86rem;
+}
+.steps li:last-child{border-bottom:0}
+.steps li::before{
+  content:counter(st);position:absolute;left:0;top:11px;width:28px;height:28px;
+  border-radius:50%;background:var(--brand);color:#fff;font-size:.8rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.steps b{color:var(--brand)}
+
+/* 对照面板 */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.compare-panel{border:1px solid var(--line);border-radius:var(--radius-s);overflow:hidden}
+.compare-panel header{padding:8px 12px;font-size:.83rem;font-weight:700;background:#f2f5f9;border-bottom:1px solid var(--line);color:var(--brand)}
+.compare-panel.alt header{background:var(--accent-soft);color:#7a5107;border-bottom-color:rgba(201,138,30,.35)}
+.compare-panel ul{font-size:.82rem;padding:10px 12px 10px 28px;margin:0}
+
+/* FAQ */
+.faq details{border:1px solid var(--line);border-radius:var(--radius-s);margin-bottom:8px;background:#fbfcfe;overflow:hidden}
+.faq summary{
+  cursor:pointer;padding:11px 14px;font-size:.88rem;font-weight:600;color:var(--brand);
+  list-style:none;position:relative;padding-right:34px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";position:absolute;right:14px;top:10px;font-size:1.05rem;color:var(--accent);font-weight:700;
+}
+.faq details[open] summary::after{content:"–"}
+.faq details[open] summary{border-bottom:1px solid var(--line);background:#fff}
+.faq .ans{padding:11px 14px;font-size:.85rem;color:var(--ink-2);margin:0}
+
+/* 评论 */
+.comment-list{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:10px}
+.comment{border:1px solid var(--line);border-radius:var(--radius-s);padding:11px 13px;background:#fbfcfe;font-size:.85rem}
+.comment-head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:3px}
+.comment-head b{font-size:.83rem;color:var(--brand)}
+.comment-head .meta{margin-left:auto}
+.comment .tone{font-size:.7rem;border-radius:3px;padding:0 5px;background:#eef1f6;color:var(--ink-2)}
+.tone-neg{background:#fbeae3;color:#94441e}
+.tone-mid{background:#eef1f6;color:#4a5a6f}
+.tone-pos{background:#e3f1ea;color:#1f6549}
+
+/* 标签索引 */
+.tag-index{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.tag-index a{
+  font-size:.82rem;padding:4px 11px;border:1px solid var(--line-2);border-radius:999px;color:var(--ink-2);
+  background:#fff;
+}
+.tag-index a:hover{border-color:var(--accent);color:#8a5c0b;background:var(--accent-soft);text-decoration:none}
+.tag-index a em{font-style:normal;color:var(--ink-3);font-size:.74rem;margin-left:4px}
+
+/* 时间线 */
+.timeline{list-style:none;padding:0;margin:10px 0 0;border-left:2px solid var(--line-2);padding-left:18px}
+.timeline li{position:relative;padding-bottom:14px;font-size:.85rem}
+.timeline li::before{
+  content:"";position:absolute;left:-25px;top:6px;width:9px;height:9px;border-radius:50%;
+  background:#fff;border:2px solid var(--brand-2);
+}
+.timeline time{display:block;font-size:.74rem;color:var(--accent);font-weight:700}
+
+/* 相关推荐 */
+.reco-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+.reco{border:1px solid var(--line);border-radius:var(--radius-s);padding:10px 12px;background:#fbfcfe}
+.reco h4{font-size:.85rem;margin:0 0 3px}
+.reco p{font-size:.78rem;color:var(--ink-2);margin:0}
+
+/* 侧栏 */
+aside{min-width:0}
+.side-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:16px 16px 14px;margin-bottom:16px;
+}
+.side-card h2{font-size:.98rem;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.side-card h2::before{content:"";width:3px;height:15px;background:var(--accent);border-radius:2px}
+.side-nav{list-style:none;padding:0;margin:0}
+.side-nav a{
+  display:block;font-size:.84rem;padding:5px 9px;border-radius:6px;color:var(--ink-2);
+  border-left:2px solid transparent;
+}
+.side-nav a:hover{background:var(--bg);text-decoration:none}
+.side-nav a.active{background:var(--accent-soft);color:#7a5107;border-left-color:var(--accent);font-weight:600}
+.side-list{list-style:none;padding:0;margin:0;font-size:.83rem}
+.side-list li{padding:6px 0;border-bottom:1px dashed var(--line);display:flex;gap:8px;align-items:baseline}
+.side-list li:last-child{border-bottom:0}
+.side-list .num{font-size:.72rem;color:var(--accent);font-weight:700;min-width:16px}
+.side-note{font-size:.76rem;color:var(--ink-3);margin-top:8px}
+.quote-side{background:var(--brand);color:#dbe5ef;border:0}
+.quote-side p{font-size:.84rem;color:#dbe5ef;margin:0 0 8px}
+.quote-side cite{font-size:.75rem;color:#9fb3c7;font-style:normal}
+
+/* 页脚 */
+.site-foot{background:#16212e;color:#b8c6d6;margin-top:10px;font-size:.83rem}
+.foot-inner{max-width:1180px;margin:0 auto;padding:34px 16px 22px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px}
+.foot-brand .brand-text{color:#fff}
+.foot-brand p{font-size:.8rem;color:#93a6ba;margin:10px 0 0}
+.foot-col h3{font-size:.85rem;color:#fff;margin:0 0 8px}
+.foot-col ul{list-style:none;padding:0;margin:0}
+.foot-col li{margin:3px 0}
+.foot-col a{color:#a9bbcd;font-size:.81rem}
+.foot-col a:hover{color:#fff}
+.foot-bottom{
+  border-top:1px solid #27384a;max-width:1180px;margin:0 auto;padding:14px 16px 22px;
+  font-size:.76rem;color:#7f93a8;display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between;
+}
+.foot-bottom a{color:#9fb3c7}
+
+#toTop{
+  position:fixed;right:18px;bottom:22px;width:42px;height:42px;border-radius:50%;
+  background:var(--brand);color:#fff;border:1px solid #3d566e;box-shadow:var(--shadow);
+  font-size:1rem;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:70;
+  font-family:inherit;
+}
+#toTop.show{display:flex}
+#toTop:hover{background:var(--brand-2)}
+
+@media (max-width:980px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  aside{order:2}
+  .overview-grid{grid-template-columns:repeat(2,1fr)}
+  .pick-grid{grid-template-columns:repeat(2,1fr)}
+  .cat-grid{grid-template-columns:repeat(3,1fr)}
+  .foot-inner{grid-template-columns:1fr 1fr}
+  .hero-inner{grid-template-columns:minmax(0,1fr)}
+  .hero-art{height:180px;max-width:420px}
+  .nav-toggle{display:inline-block}
+  .main-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow);
+    padding:10px 16px 14px;flex-direction:column;gap:2px;z-index:65;
+  }
+  .main-nav.open{display:flex}
+  .site-head{position:relative}
+  .head-inner{flex-wrap:wrap}
+}
+@media (max-width:640px){
+  :root{--anchor-off:128px}
+  .pick-grid{grid-template-columns:1fr}
+  .compare{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .reco-grid{grid-template-columns:1fr}
+  .foot-inner{grid-template-columns:1fr}
+  .search-box input{width:120px}
+  .block{padding:18px 14px}
+  .tight-list li{grid-template-columns:52px minmax(0,1fr);row-gap:2px}
+  .tight-list li .tag{grid-column:2}
+  .hero-stats{gap:16px}
+  #toTop{right:12px;bottom:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  .pick-card:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-top">
+  <div class="notice" id="notice">
+    <span class="dot" aria-hidden="true"></span>
+    <span><strong>玩物社区插嘴</strong> · 11月7日更新：万代11月第二批补款截止 <b>11月14日</b>，S.H.Figuarts 奥特曼卡册第3弹到货价回落至 <b>268元</b></span>
+    <a href="/#latest" style="color:#e8b04b;text-decoration:underline">看更新明细</a>
+  </div>
+  <header class="site-head">
+    <div class="head-inner">
+      <a class="brand" href="/#top" aria-label="返回首页">
+        <svg viewBox="0 0 32 32" role="img" aria-hidden="true">
+          <rect width="32" height="32" rx="7" fill="#1d2b3a"/>
+          <path d="M7 22l4.5-11 4.5 8 4-10 5 13" stroke="#e8b04b" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="24" cy="9" r="2.2" fill="#c7d0dd"/>
+        </svg>
+        <span class="brand-text">玩物社区插嘴</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">菜单</button>
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#picks">精选推荐</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#channels">分类频道</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">验货指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">藏家评论</a>
+      </nav>
+      <div class="head-tools">
+        <div class="search-box">
+          <input type="search" id="siteSearch" placeholder="搜条目 / 型号 / 批次" aria-label="站内搜索" autocomplete="off">
+          <div class="search-result" id="searchResult" role="listbox" aria-label="搜索结果"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div id="top"></div>
+
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-eyebrow">模玩 · 卡册 · 二手验货</span>
+      <h1 id="heroTitle">玩物社区插嘴</h1>
+      <p class="hero-lead">补款倒计时、批次差异、二手验货口径，都摊在一张表上说。这里盯的是 <b>S.H.Figuarts 奥特曼卡册第3弹</b>、<b>MG 1/100 强袭自由</b> 与 <b>万代11月补款表</b> 的具体数字，不聊虚的。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#picks">看本周精选条目</a>
+        <a class="btn btn-ghost" href="/#guide">二手验货七步</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>268</b><span>卡册第3弹现价 / 元</span></div>
+        <div><b>11.14</b><span>第二批补款截止</span></div>
+        <div><b>42</b><span>本周新增验货帖</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 420 250" role="img">
+        <defs>
+          <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3a5a75"/>
+            <stop offset="1" stop-color="#22384c"/>
+          </linearGradient>
+        </defs>
+        <rect x="14" y="18" width="392" height="214" rx="14" fill="url(#hg)" stroke="#4b6d8b"/>
+        <rect x="38" y="44" width="120" height="148" rx="8" fill="#f2f5f9" opacity=".93"/>
+        <path d="M58 168l18-52 20 36 17-44 21 60" stroke="#1d2b3a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>
+        <rect x="48" y="56" width="100" height="7" rx="3" fill="#c9d4e0"/>
+        <rect x="48" y="72" width="72" height="6" rx="3" fill="#dde5ee"/>
+        <rect x="178" y="44" width="190" height="44" rx="8" fill="#1a2a3a" stroke="#4b6d8b"/>
+        <circle cx="200" cy="66" r="7" fill="#e8b04b"/>
+        <rect x="216" y="60" width="112" height="6" rx="3" fill="#7f95a9"/>
+        <rect x="216" y="72" width="74" height="5" rx="2.5" fill="#5d7387"/>
+        <rect x="178" y="100" width="190" height="92" rx="8" fill="#16232f" stroke="#4b6d8b"/>
+        <path d="M192 172l22-40 18 26 16-32 22 46" stroke="#e8b04b" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="192" y="112" width="86" height="5" rx="2.5" fill="#5d7387"/>
+        <rect x="192" y="124" width="120" height="5" rx="2.5" fill="#41566a"/>
+        <rect x="286" y="146" width="64" height="18" rx="9" fill="#e8b04b" opacity=".9"/>
+      </svg>
+      <span class="bubble" style="left:6%;top:8%">补款 11.14</span>
+      <span class="bubble" style="right:2%;top:48%">第3弹 268元</span>
+      <span class="bubble" style="left:24%;bottom:4%">验货 42 帖</span>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="layout">
+    <main>
+
+      <!-- 领域概览 -->
+      <section class="card block" id="overview">
+        <div class="block-head">
+          <h2><span class="section-tag">概览</span>十一月模玩与卡册市场的四条主线</h2>
+          <a class="link-more" href="/#latest">全部动态</a>
+        </div>
+        <p class="block-sub">数据口径为 2026年10月10日—11月8日，来源为品牌官方补款表、二手平台成交页与社区验货记录。</p>
+        <div class="overview-grid">
+          <div class="ov-cell"><b>11.14</b><span>万代11月第二批补款截止日</span></div>
+          <div class="ov-cell"><b>268 元</b><span>奥特曼卡册第3弹到货价</span></div>
+          <div class="ov-cell"><b>+37%</b><span>MG 强袭自由二手挂单量环比</span></div>
+          <div class="ov-cell"><b>9 类</b><span>本周新增验货争议点</span></div>
+        </div>
+        <p class="ov-note">补款表与到货价之间通常有 3—7 天时间差，卡册第3弹在 11月4日开箱价 312 元、11月6日回落到 268 元，跌得比往年快，二手挂单价已被压低。</p>
+        <p>模玩市场这一个月的主线，一半在补款，一半在验货。万代把 11月批次拆成两段，第一批 11月3日截止、第二批 11月14日截止，S.H.Figuarts 线里 14 个 SKU 受影响。卡册类商品则因为批次包装差异，二手交易里“封膜是否原厂”成了最常被问的一句。至于 MG 1/100 强袭自由，11.8 前后挂单明显变多，价格却没马上动。</p>
+      </section>
+
+      <!-- 精选推荐 -->
+      <section class="card block" id="picks">
+        <div class="block-head">
+          <h2><span class="section-tag">精选</span>本周值得先看的六个条目</h2>
+          <a class="link-more" href="/#channels">按频道筛</a>
+        </div>
+        <p class="block-sub">挑的是近 7 天讨论量高、且能核对到价格或批次的条目，不是按热度排序。</p>
+        <div class="pick-grid">
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/mw-ultra-card3/560/300" alt="奥特曼卡册第3弹封套与内页展示" width="560" height="300" loading="lazy">
+            <div class="pick-body">
+              <h4>奥特曼卡册第3弹 到货价追踪</h4>
+              <p>11月6日有卖家 268 元现货 20 套，同日另一批标 299 元。差别在卡册背板烫金版本。</p>
+              <span class="meta">11月7日 · 卡册频道</span>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/mw-strike-freedom/560/300" alt="MG 1/100 强袭自由模型素组外观" width="560" height="300" loading="lazy">
+            <div class="pick-body">
+              <h4>MG 1/100 强袭自由 二手验货点</h4>
+              <p>关节松紧、贴纸翘边、支架插孔裂纹三项最常被漏掉，验货清单里单独列了。</p>
+              <span class="meta">11月6日 · 拼装频道</span>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/mw-11payment/560/300" alt="补款表截图风格的价格清单" width="560" height="300" loading="lazy">
+            <div class="pick-body">
+              <h4>万代11月补款表 第二批截止清单</h4>
+              <p>11.14 截止，涉及 14 个 SKU。逾期取消订单的规则写在官方补款页第 2 段。</p>
+              <span class="meta">11月5日 · 补款频道</span>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/mw-shf-reply/560/300" alt="S.H.Figuarts 关节细节特写" width="560" height="300" loading="lazy">
+            <div class="pick-body">
+              <h4>S.H.Figuarts 关节松紧 反例合集</h4>
+              <p>3 例腰部球关节偏松，集中在 2026 年 9 月批次，11月批次暂未见同类反馈。</p>
+              <span class="meta">11月5日 · 可动频道</span>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/mw-resin-diy/560/300" alt="树脂手办DIY上色半成品" width="560" height="300" loading="lazy">
+            <div class="pick-body">
+              <h4>树脂手办 DIY 上色 三件套成本算</h4>
+              <p>补土、底漆、清漆加起来 168 元起，比直接收成品便宜不到哪去，但能改姿势。</p>
+              <span class="meta">11月4日 · DIY频道</span>
+            </div>
+          </article>
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/mw-kuji/560/300" alt="一番赏抽奖券与奖品摆件" width="560" height="300" loading="lazy">
+            <div class="pick-body">
+              <h4>一番赏 末赏残券 价格怎么算</h4>
+              <p>11月2日某店末赏残券 45 元/张，按奖池剩余数量换算的单抽期望值约 61 元。</p>
+              <span class="meta">11月3日 · 抽赏频道</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section class="card block" id="latest">
+        <div class="block-head">
+          <h2><span class="section-tag">更新</span>11月2日—11月8日核实过的条目</h2>
+          <a class="link-more" href="/#news">更多资讯</a>
+        </div>
+        <ul class="tight-list">
+          <li><time>11月8日</time><span>MG 1/100 强袭自由 二手里出现 7 例“支架孔内壁有白色应力痕”，卖家描述均未提及。</span><span class="tag">验货</span></li>
+          <li><time>11月7日</time><span>奥特曼卡册第3弹 有店铺把“原封膜”和“重封膜”混卖，重封膜边角有均匀压痕。</span><span class="tag">卡册</span></li>
+          <li><time>11月6日</time><span>万代 11月第二批补款明细更新，S.H.Figuarts 线新增 2 个 SKU 进入本批。</span><span class="tag">补款</span></li>
+          <li><time>11月5日</time><span>一番赏某系列末赏残券降到 38 元/张，店主称奖池已抽走 62%。</span><span class="tag">抽赏</span></li>
+          <li><time>11月4日</time><span>树脂手办 DIY 群统计：11月首周补土类耗材均价 42 元/支，比 10 月贵 6 元。</span><span class="tag">DIY</span></li>
+          <li><time>11月3日</time><span>某二手平台把“模型类”拆成“拼装/可动/卡册”三个类目，历史挂单标签需要重挂。</span><span class="tag">平台</span></li>
+          <li><time>11月2日</time><span>S.H.Figuarts 9 月批次腰部关节偏松的反例，有 2 例经售后换件处理完毕。</span><span class="tag">售后</span></li>
+        </ul>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="card block" id="channels">
+        <div class="block-head">
+          <h2><span class="section-tag">频道</span>按你要找的品类进</h2>
+        </div>
+        <p class="block-sub">频道按交易与验货需求划分，同一件商品可能跨两个频道出现，以标题关键词为准。</p>
+        <div class="cat-grid">
+          <a class="cat-item" href="/#picks"><strong>奥特曼卡册</strong><span>批次 / 封膜 / 内页</span></a>
+          <a class="cat-item" href="/#picks"><strong>MG 拼装模型</strong><span>素组 / 贴纸 / 关节</span></a>
+          <a class="cat-item" href="/#picks"><strong>S.H.Figuarts 可动</strong><span>关节 / 涂装 / 替换手</span></a>
+          <a class="cat-item" href="/#guide"><strong>二手验货</strong><span>清单 / 反例 / 争议</span></a>
+          <a class="cat-item" href="/#latest"><strong>补款与到货</strong><span>截止日 / 价格 / 批次</span></a>
+          <a class="cat-item" href="/#picks"><strong>树脂手办 DIY</strong><span>补土 / 上色 / 打磨</span></a>
+          <a class="cat-item" href="/#picks"><strong>一番赏</strong><span>末赏 / 残券 / 奖池</span></a>
+          <a class="cat-item" href="/#comments"><strong>价格拐点</strong><span>挂单量 / 成交价 / 节奏</span></a>
+          <a class="cat-item" href="/#guide"><strong>包装与封膜</strong><span>原封 / 重封 / 压痕</span></a>
+          <a class="cat-item" href="/#faq"><strong>售后与换件</strong><span>申请 / 时效 / 凭证</span></a>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section class="card block deep" id="deep">
+        <div class="block-head">
+          <h2><span class="section-tag">深度</span>卡册第3弹跌到 268 元，这次跌的是包装而不是需求</h2>
+        </div>
+        <p class="lead-para">11月4日开箱价 312 元，11月6日有卖家挂 268 元。同一款商品三天掉 44 元，按往年经验，这种跌幅通常意味着需求走弱。这一次不是。</p>
+
+        <h3>跌价的时间线对不上需求曲线</h3>
+        <p>把三天的挂单量摊开看更清楚。11月4日全平台可查挂单 41 条，11月5日 67 条，11月6日 93 条；同期成交量 12 条、19 条、31 条。挂单和成交一起涨，需求没掉，掉的是单套利润。7 月第2弹上市时，挂单量从 38 条涨到 55 条用了 5 天，成交反而从 9 条降到 7 条，那才叫需求回落。</p>
+        <blockquote>可核对判断：如果 11月10日前挂单量继续增加而成交增速低于挂单增速，才算需求转向；目前两者同向，不能按“需求走弱”定价。</blockquote>
+
+        <h3>268 元那批的包装差异</h3>
+        <table class="check-table">
+          <caption class="muted" style="caption-side:bottom;text-align:left;padding-top:4px">按 11月6日 93 条挂单抽样 20 条整理的包装差异</caption>
+          <thead><tr><th>项目</th><th>268 元批（8 条）</th><th>299—312 元批（12 条）</th></tr></thead>
+          <tbody>
+            <tr><td>封膜</td><td>重封，边角有均匀压痕</td><td>原封，膜面有细微褶皱</td></tr>
+            <tr><td>背板</td><td>烫金版</td><td>普通版，部分烫金</td></tr>
+            <tr><td>内页卡位</td><td>第3弹标准 40 页</td><td>同</td></tr>
+            <tr><td>卖家描述</td><td>多写“自用拆封”</td><td>多写“全新未拆”</td></tr>
+          </tbody>
+        </table>
+        <p>价差基本能被“封膜是否原厂”解释。11月7日有 3 位卖家把重封膜标成原封，被买家在评论区贴出压痕对比图后改价。这是包装问题，不是需求问题。</p>
+
+        <h3>三种说法的层级不同</h3>
+        <p><span class="fact-tag t-fact">事实</span>11月6日 268 元成交 11 笔，最低 258 元，最高 275 元，成交时间集中在下午 3 点到 6 点。</p>
+        <p><span class="fact-tag t-reply">回应</span>平台客服对“重封膜是否属于描述不符”的回复是：以商品页标注为准，未标注“原封”不构成描述不符。</p>
+        <p><span class="fact-tag t-quote">转述</span>有店主称“第3弹到货量比第2弹多三成”，这个数字来自店主的进货单，无法独立核对。</p>
+        <p><span class="fact-tag t-guess">推测</span>若 11月中旬补款集中到货，268 元可能不是底，但底在哪取决于重封膜的比例，现在抽样样本只有 20 条，不足以给出区间。</p>
+
+        <h3>对买家的可操作结论</h3>
+        <ul>
+          <li>268 元能买，但要先看封膜照片，重点看四角压痕和膜面是否连续。</li>
+          <li>卖家写“全新未拆”不等于原封，11月7日之后有 3 例改口。</li>
+          <li>11.14 补款截止前，价格大概率不会再跌破 258 元，急着收可以出手。</li>
+          <li>如果目标是烫金背板，268 元批反而划算，但那批的封膜大多是重封。</li>
+        </ul>
+      </section>
+
+      <!-- 体验指南 -->
+      <section class="card block" id="guide">
+        <div class="block-head">
+          <h2><span class="section-tag">指南</span>二手验货七步：从封膜到关节</h2>
+        </div>
+        <p class="block-sub">按 11月社区验货帖里出现频次排序，前四步针对卡册与拼装通用项。</p>
+        <ol class="steps">
+          <li><b>看封膜四角。</b>原封膜四角折压方向一致，重封膜边角有均匀压痕。11月7日那 3 例改价就栽在这一步。</li>
+          <li><b>对烫金层。</b>卡册背板烫金在斜光下应连续，有断点说明可能是后贴。MG 强袭自由的贴纸翘边同理，重点看边缘 2mm。</li>
+          <li><b>称重。</b>卡册第3弹带外壳净重约 486g，重封膜会多出 3—6g 胶带重量。精度 1g 的厨房秤就够。</li>
+          <li><b>翻内页卡位。</b>40 页标准卡位，第 17—20 页最容易出现折角，翻的时候用指甲轻挑边缘。</li>
+          <li><b>活动关节。</b>S.H.Figuarts 腰部球关节左右各转 5 次，松紧不一致的记下来，9 月批次是重灾区。</li>
+          <li><b>查支架插孔。</b>MG 强袭自由的支架孔内壁若有白色应力痕，说明被反复插拔过，11月8日有 7 例。</li>
+          <li><b>留凭证。</b>开箱视频从快递面单开始拍，中途不停，这是售后换件唯一被认可的凭证形式。</li>
+        </ol>
+
+        <h3 style="margin-top:20px">原封与重封对照</h3>
+        <div class="compare">
+          <div class="compare-panel">
+            <header>原封膜 · 可接受</header>
+            <ul>
+              <li>膜面有细微自然褶皱</li>
+              <li>四角折压方向一致</li>
+              <li>封口胶带与膜同色</li>
+              <li>净重与官方标注差 ±2g</li>
+            </ul>
+          </div>
+          <div class="compare-panel alt">
+            <header>重封膜 · 需追问</header>
+            <ul>
+              <li>四角有均匀压痕</li>
+              <li>膜面反光过于平整</li>
+              <li>胶带边缘有气泡</li>
+              <li>净重多 3—6g</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="card block faq" id="faq">
+        <div class="block-head">
+          <h2><span class="section-tag">问答</span>补款、卡册与验货的常见问题</h2>
+        </div>
+        <details>
+          <summary>万代11月第二批补款最晚什么时候交钱？</summary>
+          <p class="ans">11月14日 23:59 截止。逾期订单按官方补款页第 2 段处理，通常是取消订单并退还定金，不保留商品。S.H.Figuarts 线本批有 14 个 SKU，具体型号以补款页列表为准。</p>
+        </details>
+        <details>
+          <summary>奥特曼卡册第3弹 268 元那批能不能收？</summary>
+          <p class="ans">能收，但先要封膜照片。268 元批大多是烫金背板配重封膜，四角压痕明显。如果卖家写“全新未拆”，要求补一张膜面斜光照，11月7日有 3 例因此改价。</p>
+        </details>
+        <details>
+          <summary>MG 1/100 强袭自由二手怎么判断有没有反复插拔？</summary>
+          <p class="ans">看支架孔内壁。反复插拔会留下白色应力痕，11月8日二手里有 7 例，卖家描述均未提及。再配合关节松紧和贴纸翘边一起看，三项里中两项就该压价。</p>
+        </details>
+        <details>
+          <summary>S.H.Figuarts 腰部球关节偏松算质量问题吗？</summary>
+          <p class="ans">9 月批次里这一项反馈集中，11月批次暂未见同类。能不能换件看售后口径：有开箱视频且从面单拍起的，11月2日有 2 例已换件处理完毕；没有视频的多被判定为使用损耗。</p>
+        </details>
+        <details>
+          <summary>一番赏末赏残券 38 元和 45 元差在哪？</summary>
+          <p class="ans">差在奖池剩余比例。11月5日某店降到 38 元/张时自述奖池已抽走 62%，45 元那家未披露抽走比例。按剩余数量换算的单抽期望值约 61 元，但期望值不等于你抽到的那一张。</p>
+        </details>
+        <details>
+          <summary>树脂手办 DIY 的耗材成本大概多少？</summary>
+          <p class="ans">补土、底漆、清漆三样 168 元起，11月首周补土类耗材均价 42 元/支，比 10 月贵 6 元。若只为收成品，DIY 未必省钱；想改姿势或做限量配色才划算。</p>
+        </details>
+      </section>
+
+      <!-- 用户评论 -->
+      <section class="card block" id="comments">
+        <div class="block-head">
+          <h2><span class="section-tag">评论</span>藏家怎么说：指向具体条目的几段</h2>
+        </div>
+        <ul class="comment-list">
+          <li class="comment">
+            <div class="comment-head"><b>阿澈</b><span class="tone tone-neg">吐槽</span><span class="meta">11月7日 · 卡册第3弹</span></div>
+            <p>268 元那批我收了两套，烫金背板确实好看，但封膜四角压痕一眼能看出来。卖家页面写“全新未拆”，我追问才承认是重封，退了一套。</p>
+          </li>
+          <li class="comment">
+            <div class="comment-head"><b>老式压力钳</b><span class="tone tone-mid">中性</span><span class="meta">11月8日 · MG 强袭自由</span></div>
+            <p>支架孔应力痕这个点以前没注意。翻了下自己三年前拼的那台，内壁也有白痕，但那是自己插的。二手里看到的得问清楚是插过几次。</p>
+          </li>
+          <li class="comment">
+            <div class="comment-head"><b>木木酱</b><span class="tone tone-pos">推荐</span><span class="meta">11月6日 · 验货指南</span></div>
+            <p>七步里第三步称重最实用。厨房秤称了 486g，和官方标注对得上，比看封膜照片靠谱多了。胶带多出来的几克真能称出来。</p>
+          </li>
+          <li class="comment">
+            <div class="comment-head"><b>迟到的补款人</b><span class="tone tone-neg">吐槽</span><span class="meta">11月5日 · 补款表</span></div>
+            <p>11.14 截止这件事我知道，但补款页把 14 个 SKU 摊在三个折叠区里，找自己要的那只找了十分钟。规则写得清楚，入口做得不清楚。</p>
+          </li>
+          <li class="comment">
+            <div class="comment-head"><b>旧胶片</b><span class="tone tone-mid">中性</span><span class="meta">11月4日 · 一番赏</span></div>
+            <p>期望值 61 元这个算法只看数学。末赏残券真正的问题是奖池里剩什么没人说得准，38 元那家只说了抽走 62%，没说剩下的是不是都是小赏。</p>
+          </li>
+          <li class="comment">
+            <div class="comment-head"><b>树脂味</b><span class="tone tone-pos">推荐</span><span class="meta">11月3日 · DIY 上色</span></div>
+            <p>42 元一支补土这个价上周还 36。想入坑的趁早，别等到年底。上色三件套里底漆最费，建议先买小罐试色。</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="card block" id="news">
+        <div class="block-head">
+          <h2><span class="section-tag">资讯</span>平台与批次层面的三条消息</h2>
+        </div>
+        <div class="timeline">
+          <ul class="timeline">
+            <li><time>11月5日</time>某二手平台把“模型类”拆成“拼装 / 可动 / 卡册”三个类目，历史挂单标签需要重挂，旧链接的搜索权重没跟过去。</li>
+            <li><time>11月4日</time>卡册第3弹开箱价 312 元，同日有店铺以 299 元预售，差价来自是否含外壳。</li>
+            <li><time>11月2日</time>S.H.Figuarts 9 月批次腰部关节偏松的两例售后换件处理完毕，凭证要求从面单开始拍开箱视频。</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="card block" id="reco">
+        <div class="block-head">
+          <h2><span class="section-tag">推荐</span>顺着手上的东西继续看</h2>
+        </div>
+        <div class="reco-grid">
+          <div class="reco">
+            <h4>奥特曼卡册 原封膜鉴别对照</h4>
+            <p>四角压痕、胶带气泡、净重三组对照，配 20 条挂单抽样。</p>
+          </div>
+          <div class="reco">
+            <h4>S.H.Figuarts 9月批次售后话术</h4>
+            <p>开箱视频怎么拍才被认可，11月2日两例换件的实际流程。</p>
+          </div>
+          <div class="reco">
+            <h4>MG 1/100 强袭自由 素组贴纸顺序</h4>
+            <p>先贴大面积再贴边缘，翘边率能降一半，附 11月8日验货发现。</p>
+          </div>
+          <div class="reco">
+            <h4>一番赏 末赏残券期望值算法</h4>
+            <p>按奖池剩余数量换算，38 元和 45 元的差价差在哪。</p>
+          </div>
+          <div class="reco">
+            <h4>树脂手办 DIY 补土耗材价格表</h4>
+            <p>11月首周均价 42 元/支，三件套 168 元起，附替代品对比。</p>
+          </div>
+          <div class="reco">
+            <h4>万代11月第二批补款 SKU 清单</h4>
+            <p>14 个型号按折叠区分组，11.14 截止，逾期取消规则。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 补充板块：可信度分层 -->
+      <section class="card block" id="cred">
+        <div class="block-head">
+          <h2><span class="section-tag">核验</span>本周信息可信度分层</h2>
+          <a class="link-more" href="/#faq">相近问题</a>
+        </div>
+        <p class="block-sub">按证据类型分层，同一件事落在不同层意味着可采信程度不同。</p>
+        <table class="check-table">
+          <thead><tr><th>层级</th><th>本周条目</th><th>依据</th></tr></thead>
+          <tbody>
+            <tr><td>可核对</td><td>卡册第3弹 11月6日成交 11 笔</td><td>二手平台成交页，价格 258—275 元</td></tr>
+            <tr><td>可核对</td><td>第二批补款 11.14 截止</td><td>官方补款页第 2 段</td></tr>
+            <tr><td>单方陈述</td><td>第3弹到货量比第2弹多三成</td><td>店主进货单，未独立核对</td></tr>
+            <tr><td>待验证</td><td>268 元是否已到底部</td><td>抽样 20 条，样本不足</td></tr>
+          </tbody>
+        </table>
+        <p class="muted" style="margin-top:10px">标签索引：</p>
+        <div class="tag-index">
+          <a href="/#picks">奥特曼卡册第3弹<em>批次</em></a>
+          <a href="/#picks">MG强袭自由<em>关节</em></a>
+          <a href="/#picks">S.H.Figuarts<em>售后</em></a>
+          <a href="/#guide">原封膜<em>验货</em></a>
+          <a href="/#latest">11月补款表<em>截止</em></a>
+          <a href="/#picks">树脂手办DIY<em>耗材</em></a>
+          <a href="/#picks">一番赏末赏<em>残券</em></a>
+          <a href="/#comments">价格拐点<em>挂单</em></a>
+        </div>
+      </section>
+
+    </main>
+
+    <aside aria-label="侧栏">
+      <div class="side-card">
+        <h2>栏目导航</h2>
+        <ul class="side-nav" id="sideNav">
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#picks">精选推荐</a></li>
+          <li><a href="/#latest">最新更新</a></li>
+          <li><a href="/#channels">分类频道</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">验货指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#comments">藏家评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#reco">相关推荐</a></li>
+          <li><a href="/#cred">可信度分层</a></li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <h2>本周价格速记</h2>
+        <ul class="side-list">
+          <li><span class="num">1</span><span>卡册第3弹 268 元（重封膜）</span></li>
+          <li><span class="num">2</span><span>卡册第3弹 299 元（原封）</span></li>
+          <li><span class="num">3</span><span>MG 强袭自由二手 365 元起</span></li>
+          <li><span class="num">4</span><span>补土耗材 42 元/支</span></li>
+          <li><span class="num">5</span><span>一番赏末赏残券 38 元/张</span></li>
+        </ul>
+        <p class="side-note">价格为 11月3日—11月8日可查挂单中位值，仅供比对。</p>
+      </div>
+      <div class="side-card quote-side">
+        <p>“268 元那批我收了两套，封膜四角压痕一眼能看出来，追问才承认是重封。”</p>
+        <cite>—— 阿澈，11月7日评论区</cite>
+      </div>
+      <div class="side-card">
+        <h2>快速入口</h2>
+        <div class="tag-index">
+          <a href="/#guide">验货七步</a>
+          <a href="/#faq">补款问答</a>
+          <a href="/#deep">跌价分析</a>
+          <a href="/#cred">可信度分层</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer class="site-foot">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="brand">
+        <svg viewBox="0 0 32 32" aria-hidden="true" style="width:30px;height:30px">
+          <rect width="32" height="32" rx="7" fill="#e8b04b"/>
+          <path d="M7 22l4.5-11 4.5 8 4-10 5 13" stroke="#1d2b3a" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-text">玩物社区插嘴</span>
+      </div>
+      <p>盯补款、拆批次、留验货凭证，把模玩交易里最容易含糊的几句话说清楚。</p>
+    </div>
+    <div class="foot-col">
+      <h3>频道</h3>
+      <ul>
+        <li><a href="/#picks">奥特曼卡册</a></li>
+        <li><a href="/#picks">MG 拼装模型</a></li>
+        <li><a href="/#picks">S.H.Figuarts</a></li>
+        <li><a href="/#picks">一番赏</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h3>实用</h3>
+      <ul>
+        <li><a href="/#guide">二手验货七步</a></li>
+        <li><a href="/#faq">补款与售后问答</a></li>
+        <li><a href="/#deep">价格拐点解析</a></li>
+        <li><a href="/#cred">可信度分层</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h3>说明</h3>
+      <ul>
+        <li><a href="/#latest">示例数据说明</a></li>
+        <li><a href="/#overview">统计口径</a></li>
+        <li><a href="/#reco">相关推荐</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>内容为示例条目，价格与成交数据取自 2026年10月10日—11月8日可查挂单，更新时间 2026年11月8日，对应正文“本周价格速记”与“最新更新”条目。</span>
+    <span>© 2026 玩物社区插嘴 · 本站不参与交易，仅整理公开信息</span>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到顶部" title="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 搜索：本地索引 */
+  var index = [
+    {t:"奥特曼卡册第3弹 到货价追踪", u:"/#picks", k:"卡册 奥特曼 第3弹 268 199 封膜 烫金"},
+    {t:"MG 1/100 强袭自由 二手验货点", u:"/#picks", k:"MG 强袭自由 拼装 支架孔 应力痕 贴纸"},
+    {t:"万代11月补款表 第二批截止清单", u:"/#picks", k:"补款 万代 11.14 SKU 截止 定金"},
+    {t:"S.H.Figuarts 关节松紧 反例合集", u:"/#picks", k:"S.H.Figuarts 关节 腰部 球关节 9月批次 售后"},
+    {t:"树脂手办 DIY 上色 三件套成本算", u:"/#picks", k:"树脂 手办 DIY 补土 底漆 清漆 上色"},
+    {t:"一番赏 末赏残券 价格怎么算", u:"/#picks", k:"一番赏 末赏 残券 奖池 期望值"},
+    {t:"二手验货七步：从封膜到关节", u:"/#guide", k:"验货 封膜 称重 关节 凭证 开箱视频"},
+    {t:"卡册第3弹跌到268元，跌的是包装", u:"/#deep", k:"跌价 包装 重封 原封 挂单量 需求"},
+    {t:"万代11月第二批补款最晚什么时候交钱", u:"/#faq", k:"补款 11.14 截止 逾期 取消"},
+    {t:"奥特曼卡册第3弹 268 元那批能不能收", u:"/#faq", k:"卡册 268 重封 封膜 烫金"},
+    {t:"MG 强袭自由 反复插拔判断", u:"/#faq", k:"强袭自由 支架孔 应力痕 插拔"},
+    {t:"本周信息可信度分层", u:"/#cred", k:"可信度 可核对 单方陈述 待验证"},
+    {t:"本周价格速记", u:"/#top", k:"价格 268 299 42 38 365"},
+    {t:"原封膜鉴别对照", u:"/#guide", k:"原封 重封 压痕 胶带 净重"}
+  ];
+
+  var input = document.getElementById("siteSearch");
+  var result = document.getElementById("searchResult");
+  if(!input || !result) return;
+
+  function esc(s){
+    return s.replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];
+    });
+  }
+
+  function render(q){
+    var key = q.trim().toLowerCase();
+    if(!key){
+      result.classList.remove("open");
+      result.innerHTML = "";
+      return;
+    }
+    var hits = index.filter(function(item){
+      return (item.t + " " + item.k).toLowerCase().indexOf(key) > -1;
+    }).slice(0,8);
+    result.classList.add("open");
+    if(hits.length === 0){
+      result.innerHTML = '<div class="empty">没有找到与“' + esc(q.trim()) + '”匹配的条目，试试“卡册”“补款”“验货”。</div>';
+      return;
+    }
+    result.innerHTML = hits.map(function(h){
+      return '<a href="' + h.u + '">' + esc(h.t) + '</a>';
+    }).join("");
+  }
+
+  input.addEventListener("input", function(){ render(input.value); });
+  input.addEventListener("focus", function(){ if(input.value.trim()) render(input.value); });
+  document.addEventListener("click", function(e){
+    if(!result.contains(e.target) && e.target !== input){
+      result.classList.remove("open");
+    }
+  });
+  input.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){ result.classList.remove("open"); input.blur(); }
+  });
+
+  /* 移动端导航 */
+  var toggle = document.getElementById("navToggle");
+  var nav = document.getElementById("mainNav");
+  if(toggle && nav){
+    toggle.addEventListener("click", function(){
+      var open = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.textContent = open ? "收起" : "菜单";
+    });
+    nav.addEventListener("click", function(e){
+      if(e.target.tagName === "A" && window.matchMedia("(max-width:980px)").matches){
+        nav.classList.remove("open");
+        toggle.setAttribute("aria-expanded","false");
+        toggle.textContent = "菜单";
+      }
+    });
+  }
+
+  /* 滚动高亮 */
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll("#sideNav a"));
+  var targets = sideLinks.map(function(a){
+    var id = a.getAttribute("href").split("#")[1];
+    return document.getElementById(id);
+  });
+
+  function markActive(){
+    var pos = window.scrollY + 140;
+    var current = -1;
+    targets.forEach(function(el, i){
+      if(el && el.offsetTop <= pos) current = i;
+    });
+    sideLinks.forEach(function(a, i){
+      a.classList.toggle("active", i === current);
+    });
+  }
+  var ticking = false;
+  window.addEventListener("scroll", function(){
+    if(!ticking){
+      window.requestAnimationFrame(function(){ markActive(); ticking = false; });
+      ticking = true;
+    }
+  }, {passive:true});
+  markActive();
+
+  /* 回到顶部 */
+  var toTop = document.getElementById("toTop");
+  window.addEventListener("scroll", function(){
+    if(window.scrollY > 480){ toTop.classList.add("show"); }
+    else{ toTop.classList.remove("show"); }
+  }, {passive:true});
+  toTop.addEventListener("click", function(){
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "玩物社区插嘴",
+  "description": "模玩藏家交流交易的前台，汇总补款时间表、卡册批次差异、二手验货口径与价格拐点判断。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "万代11月第二批补款最晚什么时候交钱？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "11月14日 23:59 截止。逾期订单按官方补款页第 2 段处理，通常是取消订单并退还定金，不保留商品。S.H.Figuarts 线本批有 14 个 SKU。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "奥特曼卡册第3弹 268 元那批能不能收？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "能收，但先要封膜照片。268 元批大多是烫金背板配重封膜，四角压痕明显。如果卖家写“全新未拆”，要求补一张膜面斜光照。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "MG 1/100 强袭自由二手怎么判断有没有反复插拔？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "看支架孔内壁。反复插拔会留下白色应力痕，11月8日二手里有 7 例，卖家描述均未提及。再配合关节松紧和贴纸翘边一起看。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "S.H.Figuarts 腰部球关节偏松算质量问题吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "9 月批次里这一项反馈集中，11月批次暂未见同类。能否换件看售后口径，有从面单开始拍的开箱视频的多被受理。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "一番赏末赏残券 38 元和 45 元差在哪？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "差在奖池剩余比例。38 元那家自述奖池已抽走 62%，45 元那家未披露抽走比例。按剩余数量换算的单抽期望值约 61 元。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "树脂手办 DIY 的耗材成本大概多少？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "补土、底漆、清漆三样 168 元起，11月首周补土类耗材均价 42 元/支，比 10 月贵 6 元。若只为收成品，DIY 未必省钱。"
+      }
+    }
+  ]
+}
+</script>
+</body>
+        </html>
