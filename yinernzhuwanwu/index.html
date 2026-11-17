@@ -1,0 +1,1144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>银儿女主玩物社区y-角色扮演玩物交流与收藏指南</title>
+<meta name="description" content="银儿女主玩物社区y是银儿女主角色扮演玩物的交流与收藏指南。收录玩物类型对照、收纳保养方法、入坑预算规划、热门搭配清单与真实玩家评论，帮新手快速分辨材质与玩法差异。">
+<meta name="keywords" content="银儿女主玩物社区y">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23233a4d'/%3E%3Cpath d='M18 44c0-10 6-18 14-18s14 8 14 18' fill='none' stroke='%23e6c98a' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='20' r='5' fill='%23e6c98a'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1f2a33;
+  --ink-soft:#43535f;
+  --muted:#6d7c88;
+  --line:#d7dee4;
+  --line-soft:#e7ecf0;
+  --bg:#f4f1ec;
+  --panel:#ffffff;
+  --panel-alt:#eef3f6;
+  --brand:#233a4d;
+  --brand-2:#315a72;
+  --accent:#b8873f;
+  --accent-soft:#f3e6ce;
+  --ok:#3f7d5c;
+  --warn:#a2503a;
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow:0 8px 24px rgba(31,42,51,.08);
+  --shadow-sm:0 2px 8px rgba(31,42,51,.06);
+  --gap:22px;
+  --sticky-top:0px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 .85em}
+ul,ol{margin:0 0 .85em;padding-left:1.15em}
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* 公告条 */
+.announce{
+  background:var(--brand);
+  color:#e9eef2;
+  font-size:13.5px;
+  position:sticky;
+  top:0;
+  z-index:60;
+}
+.announce .inner{
+  max-width:1120px;margin:0 auto;padding:7px 18px;
+  display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+}
+.announce .tag{
+  background:var(--accent);color:#231a08;font-weight:700;
+  border-radius:999px;padding:1px 10px;font-size:12px;letter-spacing:.5px;
+}
+.announce time{color:#b9c8d3;font-variant-numeric:tabular-nums}
+
+/* 页头 */
+.site-header{
+  position:sticky;
+  top:32px;
+  z-index:50;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  box-shadow:var(--shadow-sm);
+}
+.header-inner{
+  max-width:1120px;margin:0 auto;padding:10px 18px;
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.brand svg{width:38px;height:38px;flex:0 0 auto}
+.brand-text{font-weight:800;font-size:17px;color:var(--brand);letter-spacing:.3px}
+.brand-text span{display:block;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:1.5px;line-height:1.2}
+.main-nav{flex:1 1 auto;display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+.main-nav a{
+  color:var(--ink-soft);font-size:14px;padding:5px 10px;border-radius:999px;white-space:nowrap;
+}
+.main-nav a:hover{background:var(--panel-alt);color:var(--brand);text-decoration:none}
+.header-tools{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.menu-toggle{
+  display:none;background:var(--panel-alt);border:1px solid var(--line);color:var(--brand);
+  border-radius:var(--radius-sm);padding:7px 12px;font-size:14px;cursor:pointer;font-weight:600;
+}
+.searchbox{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:#fff;overflow:hidden}
+.searchbox input{
+  border:0;padding:7px 12px;font-size:13.5px;width:150px;font-family:inherit;color:var(--ink);background:transparent;
+}
+.searchbox input:focus{outline:none}
+.searchbox button{
+  border:0;background:var(--brand);color:#fff;padding:7px 13px;font-size:13.5px;cursor:pointer;font-weight:600;
+}
+.search-feedback{
+  display:none;font-size:12.5px;color:var(--warn);background:#fdf1ec;border:1px solid #f0d3c8;
+  border-radius:var(--radius-sm);padding:4px 10px;flex:1 1 100%;
+}
+.search-feedback.show{display:block}
+
+/* 首屏 */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(160deg,#1c2f3f 0%,#28485c 52%,#35596e 100%);
+  color:#eef3f6;
+}
+.hero-inner{
+  max-width:1120px;margin:0 auto;padding:56px 18px 48px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:2px;
+  color:#cfe0ea;text-transform:uppercase;margin-bottom:14px;
+}
+.hero-eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);display:inline-block}
+.hero h1{
+  font-size:clamp(28px,4vw,44px);line-height:1.22;color:#fff;letter-spacing:.5px;
+}
+.hero h1 em{font-style:normal;color:#e8c98e;border-bottom:3px solid rgba(232,201,142,.35)}
+.hero-desc{font-size:15.5px;color:#cfdde6;max-width:38em;margin-top:16px;line-height:1.85}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{
+  display:inline-block;padding:10px 20px;border-radius:999px;font-size:14.5px;font-weight:600;
+  transition:transform .15s ease, background .15s ease;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:#241a09}
+.btn-primary:hover{background:#c99a52}
+.btn-ghost{border:1px solid rgba(255,255,255,.45);color:#eef3f6}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.hero-meta{display:flex;gap:26px;margin-top:30px;flex-wrap:wrap}
+.hero-meta div{font-size:13px;color:#b9cddb}
+.hero-meta strong{display:block;font-size:24px;color:#fff;font-variant-numeric:tabular-nums;letter-spacing:.5px}
+.hero-visual{position:relative;min-height:280px;display:flex;align-items:center;justify-content:center}
+.hero-visual svg{width:100%;max-width:360px;height:auto}
+
+/* 版面 */
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.layout{
+  display:grid;grid-template-columns:1fr 300px;gap:34px;
+  align-items:start;padding:40px 0 20px;
+}
+.section{margin-bottom:46px;scroll-margin-top:96px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.section-head h2{
+  font-size:22px;color:var(--brand);position:relative;padding-left:14px;
+}
+.section-head h2::before{
+  content:"";position:absolute;left:0;top:6px;bottom:4px;width:4px;border-radius:2px;background:var(--accent);
+}
+.section-head .sub{font-size:13px;color:var(--muted)}
+.card{
+  background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);
+}
+
+/* 概览 */
+.overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.overview-card{padding:18px;display:flex;flex-direction:column;gap:6px}
+.overview-card h3{font-size:16px;color:var(--brand)}
+.overview-card .k{font-size:12px;color:var(--accent);letter-spacing:1px;font-weight:700}
+.overview-card p{font-size:13.5px;color:var(--ink-soft);margin:0}
+.overview-card .stat{font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;margin-top:auto}
+
+/* 精选推荐 */
+.pick-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:16px}
+.pick-main{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.pick-main img{width:100%;height:200px;object-fit:cover}
+.pick-main .body{padding:18px}
+.pick-main h3{font-size:18px;color:var(--brand);margin-bottom:8px}
+.pick-main p{font-size:13.5px;color:var(--ink-soft);margin-bottom:8px}
+.pick-list{display:flex;flex-direction:column;gap:12px}
+.pick-item{padding:13px 15px;display:flex;gap:12px;align-items:flex-start}
+.pick-item .num{
+  flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--panel-alt);color:var(--brand-2);
+  font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;
+}
+.pick-item h4{font-size:14.5px;color:var(--ink);margin-bottom:3px}
+.pick-item p{font-size:12.5px;color:var(--muted);margin:0}
+
+/* 更新列表 */
+.update-list{display:flex;flex-direction:column;gap:0}
+.update-item{
+  display:grid;grid-template-columns:92px 1fr auto;gap:14px;align-items:baseline;
+  padding:13px 4px;border-bottom:1px dashed var(--line);
+}
+.update-item:last-child{border-bottom:0}
+.update-item time{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.update-item h3{font-size:14.5px;color:var(--ink)}
+.update-item .src{font-size:12px;color:var(--muted)}
+.update-item a{font-size:13px;white-space:nowrap}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cat-chip{
+  padding:13px 14px;display:block;font-size:14px;color:var(--ink-soft);font-weight:600;
+  background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius-sm);
+  transition:border-color .15s ease, transform .15s ease;
+}
+.cat-chip:hover{border-color:var(--brand-2);transform:translateY(-2px);text-decoration:none}
+.cat-chip span{display:block;font-size:11.5px;color:var(--muted);font-weight:400;margin-top:2px}
+
+/* 深度解析 */
+.deep{padding:0;overflow:hidden}
+.deep-head{
+  padding:26px 26px 20px;background:var(--panel-alt);border-bottom:1px solid var(--line-soft);
+}
+.deep-head h2{font-size:22px;color:var(--brand)}
+.deep-head p{font-size:13.5px;color:var(--ink-soft);margin:8px 0 0}
+.deep-body{padding:24px 26px}
+.deep-body h3{
+  font-size:17px;color:var(--brand);margin:24px 0 10px;padding-top:14px;border-top:1px solid var(--line-soft);
+}
+.deep-body h3:first-child{margin-top:0;border-top:0;padding-top:0}
+.deep-body p{font-size:14.5px;color:#2c3944}
+.deep-body strong{color:var(--warn);font-weight:700}
+.compare{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 16px}
+.compare th,.compare td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.compare th{background:var(--panel-alt);color:var(--brand);font-weight:700;font-size:12.5px}
+.compare td{color:var(--ink-soft)}
+.quote-card{
+  border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  padding:14px 16px;font-size:13.5px;color:#5a431e;margin:14px 0;
+}
+.quote-card cite{display:block;font-style:normal;font-size:12px;color:#8a6c38;margin-top:6px}
+
+/* 体验指南 步骤 */
+.steps{counter-reset:step;display:flex;flex-direction:column;gap:12px}
+.step{
+  display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px 18px;align-items:start;
+}
+.step::before{
+  counter-increment:step;content:counter(step,decimal-leading-zero);
+  font-size:15px;font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums;
+}
+.step h3{font-size:15px;color:var(--brand);margin-bottom:4px}
+.step p{font-size:13.5px;color:var(--ink-soft);margin:0}
+
+/* FAQ */
+.faq details{
+  background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius-sm);
+  padding:0;margin-bottom:10px;overflow:hidden;
+}
+.faq summary{
+  cursor:pointer;padding:14px 18px;font-size:14.5px;font-weight:600;color:var(--ink);
+  list-style:none;position:relative;padding-right:40px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);
+  font-size:18px;color:var(--accent);font-weight:400;line-height:1;
+}
+.faq details[open] summary::after{content:"–"}
+.faq details[open] summary{background:var(--panel-alt)}
+.faq .answer{padding:4px 18px 16px;font-size:13.5px;color:var(--ink-soft)}
+.faq .answer p{margin:0 0 .6em}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.comment{padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.comment-top{display:flex;align-items:center;gap:10px}
+.avatar{
+  width:34px;height:34px;border-radius:50%;background:var(--brand-2);color:#fff;font-size:13px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+}
+.comment-top .who{font-size:13px;font-weight:700;color:var(--brand)}
+.comment-top .when{font-size:11.5px;color:var(--muted);margin-left:auto}
+.comment p{font-size:13.5px;color:var(--ink-soft);margin:0}
+.comment .item-ref{font-size:12px;color:var(--accent);font-weight:600}
+.comment .stars{color:var(--accent);font-size:12px;letter-spacing:1px}
+
+/* 资讯 */
+.news-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.news-item{padding:16px 18px}
+.news-item .meta{display:flex;gap:10px;font-size:12px;color:var(--muted);margin-bottom:6px}
+.news-item h3{font-size:15px;color:var(--brand);margin-bottom:5px}
+.news-item p{font-size:13px;color:var(--ink-soft);margin:0}
+
+/* 标签推荐 */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:9px}
+.tag-cloud a{
+  display:inline-block;padding:6px 14px;border-radius:999px;font-size:13px;
+  background:var(--panel);border:1px solid var(--line);color:var(--ink-soft);
+}
+.tag-cloud a:hover{border-color:var(--brand-2);color:var(--brand);text-decoration:none;background:var(--panel-alt)}
+
+/* 可信度分层 */
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.trust-col{padding:16px 18px}
+.trust-col .level{font-size:12px;font-weight:700;letter-spacing:1px;display:inline-block;padding:2px 10px;border-radius:999px;margin-bottom:8px}
+.trust-col.l1 .level{background:#e3f0e8;color:#2f6748}
+.trust-col.l2 .level{background:#f7efd9;color:#8a6c1f}
+.trust-col.l3 .level{background:#f6e3dc;color:#98452f}
+.trust-col h3{font-size:14.5px;color:var(--ink);margin-bottom:6px}
+.trust-col ul{font-size:13px;color:var(--ink-soft);padding-left:1em}
+.trust-col li{margin-bottom:5px}
+
+/* 侧栏 */
+.sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:96px}
+.side-card{padding:18px}
+.side-card h2{font-size:15px;color:var(--brand);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--line-soft)}
+.side-nav a{
+  display:block;font-size:13.5px;color:var(--ink-soft);padding:6px 10px;border-radius:var(--radius-sm);
+  border-left:3px solid transparent;
+}
+.side-nav a:hover{background:var(--panel-alt);text-decoration:none}
+.side-nav a.active{background:var(--panel-alt);border-left-color:var(--accent);color:var(--brand);font-weight:700}
+.side-mini{display:flex;flex-direction:column;gap:10px}
+.side-mini a{font-size:13px;color:var(--ink-soft);display:flex;gap:8px;align-items:baseline}
+.side-mini a::before{content:"·";color:var(--accent);font-weight:900}
+.side-note{font-size:12px;color:var(--muted);line-height:1.7;margin:0}
+
+/* 页尾 */
+.site-footer{background:var(--brand);color:#c7d5df;margin-top:20px}
+.footer-inner{max-width:1120px;margin:0 auto;padding:40px 18px 24px}
+.footer-top{display:grid;grid-template-columns:1.2fr 2fr;gap:34px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.12)}
+.footer-brand{display:flex;gap:12px;align-items:flex-start}
+.footer-brand svg{width:38px;height:38px;flex:0 0 auto}
+.footer-brand .name{font-size:16px;font-weight:800;color:#fff}
+.footer-brand p{font-size:12.5px;color:#a9bfcd;margin:6px 0 0;line-height:1.7}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.footer-cols h3{font-size:13px;color:#e8c98e;letter-spacing:1px;margin-bottom:8px}
+.footer-cols a{display:block;font-size:12.5px;color:#b6c9d6;padding:3px 0}
+.footer-cols a:hover{color:#fff}
+.footer-bottom{padding-top:18px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:#93aab8}
+.footer-bottom p{margin:0}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:18px;bottom:22px;width:44px;height:44px;border-radius:50%;
+  background:var(--brand);color:#fff;border:1px solid rgba(255,255,255,.25);
+  font-size:18px;cursor:pointer;display:none;align-items:center;justify-content:center;
+  box-shadow:var(--shadow);z-index:70;
+}
+.to-top.show{display:flex}
+.to-top:hover{background:var(--brand-2)}
+
+/* 响应式 */
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:static;top:auto;order:2}
+  .main-col{order:1}
+  .hero-inner{grid-template-columns:1fr;gap:24px}
+  .hero-visual{min-height:200px;order:-1}
+  .overview-grid{grid-template-columns:repeat(2,1fr)}
+  .pick-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .comments{grid-template-columns:1fr}
+  .news-list{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .site-header{top:30px}
+  .main-nav{
+    display:none;flex-basis:100%;flex-direction:column;align-items:stretch;gap:2px;
+    padding-top:8px;border-top:1px solid var(--line-soft);margin-top:4px;
+  }
+  .main-nav.open{display:flex}
+  .main-nav a{padding:9px 10px;border-radius:var(--radius-sm)}
+  .menu-toggle{display:inline-block}
+  .searchbox input{width:120px}
+  .header-tools{gap:6px}
+  .hero-inner{padding:36px 18px 34px}
+  .deep-body,.deep-head{padding-left:16px;padding-right:16px}
+  .update-item{grid-template-columns:72px 1fr;gap:6px 10px}
+  .update-item a{grid-column:2}
+  .overview-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr 1fr}
+  .footer-cols{grid-template-columns:1fr 1fr}
+  .to-top{right:12px;bottom:14px;width:40px;height:40px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="announce" id="announce">
+  <div class="inner">
+    <span class="tag">更新</span>
+    <span><strong>银儿女主玩物社区y</strong> 收藏库同步：新增 11 月 6 日「银链短款与长款佩戴对照表」，并补录 3 条材质保养记录。</span>
+    <time datetime="2026-11-08">2026-11-08 09:20 更新</time>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <svg viewBox="0 0 64 64" role="img" aria-label="银链与角色标记图形">
+        <rect width="64" height="64" rx="14" fill="#233a4d"/>
+        <circle cx="32" cy="19" r="5.5" fill="#e8c98e"/>
+        <path d="M17 47c0-10.5 6.7-18 15-18s15 7.5 15 18" fill="none" stroke="#e8c98e" stroke-width="4" stroke-linecap="round"/>
+        <path d="M24 47h16" stroke="#7fa3b8" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="46" cy="14" r="3" fill="#7fa3b8"/>
+      </svg>
+      <div class="brand-text">银儿女主玩物社区y<span>SILVER ROLEPLAY COLLECTIVE</span></div>
+    </div>
+    <nav class="main-nav" id="mainNav" aria-label="主题导航">
+      <a href="/#overview">领域概览</a>
+      <a href="/#picks">精选推荐</a>
+      <a href="/#updates">最新更新</a>
+      <a href="/#channels">分类入口</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#news">相关资讯</a>
+    </nav>
+    <div class="header-tools">
+      <div class="searchbox">
+        <input type="search" id="searchInput" placeholder="搜条目 / 材质 / 玩法" aria-label="站内搜索">
+        <button type="button" id="searchBtn">查找</button>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">菜单</button>
+    </div>
+    <div class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">角色扮演玩物 · 收藏与上手</div>
+      <h1>银儿女主玩物社区y</h1>
+      <p class="hero-desc">围绕银链、锁扣、徽记与场景小道具的角色扮演收藏向索引。整理材质差异、适配尺寸、保养周期与真实上手反馈，给第一次挑选的人和已经收了一柜子的人各一份可核对的清单。</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="/#picks">查看精选搭配</a>
+        <a class="btn btn-ghost" href="/#guide">新手三步上手</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>386</strong>已收录条目</div>
+        <div><strong>9</strong>玩法分类频道</div>
+        <div><strong>52</strong>条保养记录</div>
+        <div><strong>11-08</strong>本次同步日</div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 340 300" role="img">
+        <defs>
+          <linearGradient id="ringMetal" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#e9eef2"/>
+            <stop offset="0.5" stop-color="#aebecb"/>
+            <stop offset="1" stop-color="#7a8e9e"/>
+          </linearGradient>
+        </defs>
+        <circle cx="170" cy="150" r="112" fill="none" stroke="#38586d" stroke-width="1.5" stroke-dasharray="3 7"/>
+        <circle cx="170" cy="150" r="86" fill="none" stroke="url(#ringMetal)" stroke-width="10"/>
+        <circle cx="170" cy="56" r="16" fill="#233a4d" stroke="#e8c98e" stroke-width="3"/>
+        <circle cx="170" cy="56" r="6" fill="#e8c98e"/>
+        <path d="M170 72 v42" stroke="#e8c98e" stroke-width="3" stroke-linecap="round"/>
+        <rect x="150" y="114" width="40" height="30" rx="8" fill="#7fa3b8" opacity=".85"/>
+        <path d="M170 144 v26" stroke="#e8c98e" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="170" cy="184" r="12" fill="none" stroke="#e8c98e" stroke-width="3"/>
+        <path d="M120 210 q50 26 100 0" fill="none" stroke="#7fa3b8" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="88" cy="238" r="18" fill="none" stroke="#c8d5df" stroke-width="2"/>
+        <circle cx="252" cy="238" r="18" fill="none" stroke="#c8d5df" stroke-width="2"/>
+        <circle cx="88" cy="238" r="5" fill="#e8c98e"/>
+        <circle cx="252" cy="238" r="5" fill="#e8c98e"/>
+        <text x="170" y="286" text-anchor="middle" font-size="11" fill="#a9bfcd" letter-spacing="3">CHAIN · LOCK · MARK</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="layout">
+    <main class="main-col">
+
+      <!-- 领域概览 -->
+      <section class="section" id="overview">
+        <div class="section-head">
+          <h2>领域概览：银链玩物到底在玩什么</h2>
+          <span class="sub">按材质、佩戴方式与场景划分</span>
+        </div>
+        <div class="overview-grid">
+          <article class="card overview-card">
+            <span class="k">材质</span>
+            <h3>925银与镀银的差别</h3>
+            <p>925银延展性好、可反复抛光；镀银层在汗液和摩擦下通常 3—6 个月出现露底，适合试水不适合长期贴肤。</p>
+            <div class="stat">保养周期：925银约 4 周擦银布一次</div>
+          </article>
+          <article class="card overview-card">
+            <span class="k">佩戴</span>
+            <h3>短链 40cm 与长链 55cm 的取舍</h3>
+            <p>短链贴颈、活动幅度小，适合配合立领和盘发；长链在肩线附近摆动，动作大时需锁扣＋延长链双重固定。</p>
+            <div class="stat">新手推荐先从 45cm 入手</div>
+          </article>
+          <article class="card overview-card">
+            <span class="k">场景</span>
+            <h3>徽记与契约卡道具</h3>
+            <p>金属徽记、亚克力契约卡、编号吊牌构成仪式感三件套，单件成本 30—120 元，重量和边缘倒角是耐用关键。</p>
+            <div class="stat">11 月 5 日新增 7 张契约卡样</div>
+          </article>
+          <article class="card overview-card">
+            <span class="k">规则</span>
+            <h3>角色设定与玩物边界</h3>
+            <p>设定卡写清角色关系、可接受动作和暂停口令，玩物只是视觉载体，边界条款优先于一切道具清单。</p>
+            <div class="stat">安全词与暂停口令须口头确认</div>
+          </article>
+          <article class="card overview-card">
+            <span class="k">收藏</span>
+            <h3>编号体系与收纳</h3>
+            <p>分格首饰盒＋防潮珠是主流方案，银件与皮革、棉绳分开存放，避免硫化变黑与染色串色。</p>
+            <div class="stat">单柜建议湿度 45%—55%</div>
+          </article>
+          <article class="card overview-card">
+            <span class="k">预算</span>
+            <h3>第一次入坑花多少钱合适</h3>
+            <p>银链基础款 80—160 元，锁扣 40—90 元，徽记 30—80 元，先凑一套 250 元档位能覆盖大部分日常场景。</p>
+            <div class="stat">11 月价格样本取自 6 家铺</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 精选推荐 -->
+      <section class="section" id="picks">
+        <div class="section-head">
+          <h2>精选内容推荐：本周值得看的 5 条</h2>
+          <span class="sub">按可复用的搭配逻辑排序</span>
+        </div>
+        <div class="pick-grid">
+          <article class="card pick-main">
+            <img src="https://picsum.photos/seed/silverchain01/720/400" width="720" height="400" loading="lazy" alt="银链短款与长款并排放置的对照展示">
+            <div class="body">
+              <h3>银链短款与长款佩戴对照表</h3>
+              <p>同一套服装下 40cm、45cm、55cm 三条链的落点差异，配 9 张实拍角度，标注了锁骨宽窄、领口形状对视觉重心的影响。</p>
+              <p style="font-size:12.5px;color:var(--muted)">11 月 6 日 · 收纳整理组 · 收藏 214</p>
+              <a href="/#deep">读搭配拆解 →</a>
+            </div>
+          </article>
+          <div class="pick-list">
+            <article class="card pick-item">
+              <span class="num">2</span>
+              <div>
+                <h4>三款锁扣的解锁手感对比</h4>
+                <p>龙虾扣、弹簧扣、磁吸扣，单手操作成功率与误开概率实测。</p>
+              </div>
+            </article>
+            <article class="card pick-item">
+              <span class="num">3</span>
+              <div>
+                <h4>契约卡材质耐折度排行</h4>
+                <p>亚克力 2mm、PVC 0.8mm、铜版纸覆膜，反复弯折 50 次后的边缘状态。</p>
+              </div>
+            </article>
+            <article class="card pick-item">
+              <span class="num">4</span>
+              <div>
+                <h4>汗手党银件保养时间表</h4>
+                <p>夏季 2 周、冬季 6 周的擦拭间隔，附硫化发黑的三种处理顺序。</p>
+              </div>
+            </article>
+            <article class="card pick-item">
+              <span class="num">5</span>
+              <div>
+                <h4>小个子角色扮演搭配比例</h4>
+                <p>160cm 以下如何用短链＋高腰线修正视觉重心，避开长链压个子。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section class="section" id="updates">
+        <div class="section-head">
+          <h2>最新更新</h2>
+          <span class="sub">11 月 1 日 — 11 月 8 日</span>
+        </div>
+        <div class="card update-list">
+          <div class="update-item">
+            <time datetime="2026-11-08">今天 09:20</time>
+            <h3>新增长链防缠绕收纳法（皮革分隔盒版）</h3>
+            <span class="src">收纳整理组</span>
+          </div>
+          <div class="update-item">
+            <time datetime="2026-11-07">昨天 18:46</time>
+            <h3>补录「磁吸扣在肩线摆动下的误开概率」测试数据</h3>
+            <span class="src">材质实验室</span>
+          </div>
+          <div class="update-item">
+            <time datetime="2026-11-06">11-06 14:03</time>
+            <h3>银链短款与长款佩戴对照表上线，含 9 张实拍角度</h3>
+            <a href="/#picks">查看</a>
+          </div>
+          <div class="update-item">
+            <time datetime="2026-11-05">11-05 11:12</time>
+            <h3>契约卡样张扩充至 7 张，新增边缘倒角说明</h3>
+            <span class="src">道具档案</span>
+          </div>
+          <div class="update-item">
+            <time datetime="2026-11-03">11-03 20:35</time>
+            <h3>160cm 以下搭配比例指南修订第二版，替换 4 处示例</h3>
+            <span class="src">搭配研究</span>
+          </div>
+          <div class="update-item">
+            <time datetime="2026-11-01">11-01 10:08</time>
+            <h3>秋季银件保养清单新增硫化处理三步顺序</h3>
+            <span class="src">保养记录</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="section" id="channels">
+        <div class="section-head">
+          <h2>分类入口</h2>
+          <span class="sub">按你下一步想解决的问题挑</span>
+        </div>
+        <div class="cat-grid">
+          <a class="cat-chip" href="/#deep">银链长度选择<span>40 / 45 / 55cm 对照</span></a>
+          <a class="cat-chip" href="/#deep">锁扣与延长链<span>龙虾扣 · 弹簧扣 · 磁吸</span></a>
+          <a class="cat-chip" href="/#picks">徽记与吊牌<span>编号、材质、倒角</span></a>
+          <a class="cat-chip" href="/#guide">契约卡道具<span>亚克力 / PVC / 覆膜</span></a>
+          <a class="cat-chip" href="/#guide">角色设定卡<span>关系、边界、暂停口令</span></a>
+          <a class="cat-chip" href="/#updates">银件保养<span>擦拭间隔与硫化处理</span></a>
+          <a class="cat-chip" href="/#faq">收纳与防潮<span>分格盒与防潮珠</span></a>
+          <a class="cat-chip" href="/#news">预算规划<span>250 元起步档位</span></a>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section class="section deep" id="deep">
+        <div class="deep-head">
+          <h2>深度解析：银链长度不是审美问题，是活动半径问题</h2>
+          <p>把判断拆成可核对的对照表、时间线与说法差异，方便自己复核。</p>
+        </div>
+        <div class="deep-body">
+          <h3>一、40cm 与 55cm 的差别，先看手臂抬升幅度</h3>
+          <p>10 月 28 日至 11 月 4 日，搭配研究组记录了 6 位不同肩宽的参与者分别佩戴 40cm、45cm、55cm 银链完成同一组抬臂、前屈、转身动作。40cm 链在抬臂超过 90° 时，链身与颈侧接触点出现明显上滑，平均 2.1 次/分钟需手动归位；55cm 链的接触点落在锁骨下方，抬臂时位移小，但前屈 30° 以上时会向领口内侧滑。<strong>如果你日常动作幅度大，45cm＋延长链的容错率高于任一固定长度</strong>。</p>
+          <table class="compare">
+            <thead>
+              <tr><th>长度</th><th>落点</th><th>抬臂 90° 位移</th><th>前屈 30° 状态</th><th>适配领口</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>40cm</td><td>颈根偏上</td><td>约 3.2cm 上滑</td><td>基本稳定</td><td>圆领、立领</td></tr>
+              <tr><td>45cm</td><td>锁骨中点</td><td>约 1.4cm 上滑</td><td>轻微外移</td><td>多数日常领口</td></tr>
+              <tr><td>55cm</td><td>锁骨下方</td><td>约 0.6cm</td><td>向领内滑 2cm</td><td>V 领、开衫</td></tr>
+            </tbody>
+          </table>
+          <p>这组数据来自 6 人样本，不足以当结论，但至少说明「长链更稳」的说法只在抬臂维度成立，前屈场景会反转。有人据此认为长链更安全，这是个过度概括。</p>
+
+          <h3>二、锁扣误开概率的版本差异</h3>
+          <p>磁吸扣在 11 月 7 日的补测中，肩线附近摆动 20 分钟的记录为 1 次误开/人；同组龙虾扣 0 次、弹簧扣 0 次。但 10 月版测试里磁吸扣表现正常，差异出在测试动作：旧版只做原地站立，新版加入了肩部摆动。<strong>误开不是扣型本身的固定属性，而是扣型与动作组合的结果</strong>。购买时看评价里写没写动作场景，比只看星级有用。</p>
+          <div class="quote-card">
+            「我换磁吸扣是因为单手能扣上，结果穿外套时被领子带开两次，后来只在短链上用。」
+            <cite>—— 收藏者 阿雉，10 月 30 日留言</cite>
+          </div>
+
+          <h3>三、银件变黑的时间线，取决于存放而非佩戴</h3>
+          <p>保养记录里有三件同批次 925 银吊牌：A 件每次佩戴后用擦银布擦拭并放分格盒，B 件不擦直接放抽屉，C 件不擦且与棉绳混放。11 月 2 日开盒检查，A 件表面仍亮，B 件边缘出现浅黄，C 件整体泛灰黑。时间跨度 6 周，温差和湿度未控制，因此这组对照只能说明存放方式的影响方向，不能给出精确天数。想验证自家环境，最简单的办法是留一件不擦、单独放，6 周后对照。</p>
+
+          <h3>四、被忽略的倒角：摸得到才算过关</h3>
+          <p>徽记和契约卡的边缘处理，比图案好看更影响使用。2mm 亚克力未倒角时，边缘在手掌内侧反复摩擦 15 分钟会出现压痕；做过 0.5mm 倒角的同尺寸样张，30 分钟后仅轻微发热。11 月 5 日新增的 7 张样张里，有 3 张标注了倒角参数，剩下 4 张未标，需要到手后自己摸边缘判断。</p>
+        </div>
+      </section>
+
+      <!-- 体验指南 -->
+      <section class="section" id="guide">
+        <div class="section-head">
+          <h2>体验指南：第一次上手的三步</h2>
+          <span class="sub">按顺序做，少踩重复坑</span>
+        </div>
+        <div class="steps">
+          <div class="card step">
+            <div>
+              <h3>先定动作幅度，再选长度</h3>
+              <p>回想日常最常见的三个动作：抬手、前屈、转身。哪个占比最高，就优先满足哪一项。动作幅度大选 45cm＋延长链，静坐为主可选 40cm 贴颈。</p>
+            </div>
+          </div>
+          <div class="card step">
+            <div>
+              <h3>锁扣先买两种，用一周再定</h3>
+              <p>龙虾扣和弹簧扣各备一只，分别装在常用链上，记录一周内的单手操作次数与误开情况。磁吸扣建议只用于短链或低频场景。</p>
+            </div>
+          </div>
+          <div class="card step">
+            <div>
+              <h3>收纳先分格，再谈保养</h3>
+              <p>银件、皮革、棉绳分三格，格内放防潮珠。每周固定一天擦拭并翻看一次，比攒到发黑再处理省事得多。擦拭方向要单向，别来回摩擦。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section faq" id="faq">
+        <div class="section-head">
+          <h2>常见问题</h2>
+          <span class="sub">来自 11 月 1—7 日提问</span>
+        </div>
+        <details>
+          <summary>925银链戴着睡觉会变形吗</summary>
+          <div class="answer"><p>细链（1.2mm 以下）在翻身受压时有弯折风险，尤其链节连接处。粗链（2mm 以上）相对耐受，但压痕会留在皮肤上。夜间摘下是更稳的做法。</p></div>
+        </details>
+        <details>
+          <summary>镀银件露底了还能补救吗</summary>
+          <div class="answer"><p>露底区域无法自行恢复镀层，可用同色指甲油薄涂做临时遮挡，但会随摩擦脱落。露底面积超过三成时，换新比修复划算。镀银件适合试风格，不适合长期高频佩戴。</p></div>
+        </details>
+        <details>
+          <summary>契约卡用什么材质反复使用不易卷边</summary>
+          <div class="answer"><p>2mm 亚克力边缘最稳，但重量和硬度高；PVC 0.8mm 轻便，反复弯折后四角会起毛；铜版纸覆膜成本低，遇潮易分层。需要频繁拿取选亚克力，只做展示选覆膜。</p></div>
+        </details>
+        <details>
+          <summary>链长 45cm 在身高 155cm 的人身上落点在哪</summary>
+          <div class="answer"><p>大致落在锁骨下缘到胸骨上端之间，比 165cm 的人高出约 2cm 视觉位置。搭配高腰线服装时，45cm 可能压到领口装饰，可改用 40cm 或把链坠调到侧边。</p></div>
+        </details>
+        <details>
+          <summary>角色设定卡里的边界条款要写多细</summary>
+          <div class="answer"><p>至少写清三件事：可接受动作范围、暂停口令、出现不适后的处理方式。条款细到能回答「这个动作算不算越界」即可，不必逐条列举所有可能。设定卡是沟通工具，不是法律文本。</p></div>
+        </details>
+      </section>
+
+      <!-- 用户评论 -->
+      <section class="section" id="reviews">
+        <div class="section-head">
+          <h2>用户评论</h2>
+          <span class="sub">来自条目页的真实留言</span>
+        </div>
+        <div class="comments">
+          <article class="card comment">
+            <div class="comment-top">
+              <div class="avatar">雉</div>
+              <span class="who">阿雉</span>
+              <span class="when">11-07</span>
+            </div>
+            <p><span class="stars">★★★★☆</span></p>
+            <p>磁吸扣那篇写得准，我穿高领外套时确实被带开过。不过短链上用着还行，单手操作省事。</p>
+            <p class="item-ref">关联：三款锁扣的解锁手感对比</p>
+          </article>
+          <article class="card comment">
+            <div class="comment-top">
+              <div class="avatar">蓝</div>
+              <span class="who">蓝川</span>
+              <span class="when">11-06</span>
+            </div>
+            <p><span class="stars">★★★☆☆</span></p>
+            <p>55cm 长链的前屈数据跟我体感对不上，我前屈时反而更稳。可能跟领口有关，我平时穿圆领。</p>
+            <p class="item-ref">关联：银链短款与长款佩戴对照表</p>
+          </article>
+          <article class="card comment">
+            <div class="comment-top">
+              <div class="avatar">麦</div>
+              <span class="who">麦穗</span>
+              <span class="when">11-05</span>
+            </div>
+            <p><span class="stars">★★★★★</span></p>
+            <p>契约卡倒角那段很实用。之前买过一张没倒角的，手掌内侧被磨出红印，后来自己用砂纸磨了一下才好。</p>
+            <p class="item-ref">关联：契约卡材质耐折度排行</p>
+          </article>
+          <article class="card comment">
+            <div class="comment-top">
+              <div class="avatar">陆</div>
+              <span class="who">陆拾</span>
+              <span class="when">11-04</span>
+            </div>
+            <p><span class="stars">★★☆☆☆</span></p>
+            <p>预算那篇给的 250 元档位有点理想化，我实际凑一套花了 380。锁扣和延长链加起来就超了。</p>
+            <p class="item-ref">关联：第一次入坑花多少钱合适</p>
+          </article>
+          <article class="card comment">
+            <div class="comment-top">
+              <div class="avatar">青</div>
+              <span class="who">青禾</span>
+              <span class="when">11-03</span>
+            </div>
+            <p><span class="stars">★★★★☆</span></p>
+            <p>汗手党保养表照着做了两周，银链确实没怎么变黑。擦银布单向擦这个细节以前不知道。</p>
+            <p class="item-ref">关联：汗手党银件保养时间表</p>
+          </article>
+          <article class="card comment">
+            <div class="comment-top">
+              <div class="avatar">言</div>
+              <span class="who">言午</span>
+              <span class="when">11-02</span>
+            </div>
+            <p><span class="stars">★★★☆☆</span></p>
+            <p>收纳那篇提到的湿度 45%—55%，普通家庭很难测吧。我直接放了几包防潮珠，没管湿度数值。</p>
+            <p class="item-ref">关联：长链防缠绕收纳法</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="section" id="news">
+        <div class="section-head">
+          <h2>相关资讯</h2>
+          <span class="sub">同领域动态，按时间排序</span>
+        </div>
+        <div class="news-list">
+          <article class="card news-item">
+            <div class="meta"><time datetime="2026-11-08">11-08</time><span>道具档案</span></div>
+            <h3>契约卡样张增至 7 张，新增倒角参数标注</h3>
+            <p>3 张标注了 0.5mm 倒角，其余 4 张待补。样张边缘手感将成为后续评级项。</p>
+          </article>
+          <article class="card news-item">
+            <div class="meta"><time datetime="2026-11-07">11-07</time><span>材质实验室</span></div>
+            <h3>磁吸扣补测公开：摆动场景误开率上升</h3>
+            <p>旧版测试只做原地站立，补测加入肩部摆动后结果不同。测试动作已写入方法说明。</p>
+          </article>
+          <article class="card news-item">
+            <div class="meta"><time datetime="2026-11-04">11-04</time><span>收纳整理组</span></div>
+            <h3>皮革分隔盒方案更新，长链缠绕问题缓解</h3>
+            <p>用皮革隔条替代分格板，长链在盒内不再打结，取链时间平均减少 40 秒。</p>
+          </article>
+          <article class="card news-item">
+            <div class="meta"><time datetime="2026-11-02">11-02</time><span>保养记录</span></div>
+            <h3>同批次银件 6 周对照结果公布，存放方式影响明显</h3>
+            <p>A、B、C 三件不同存放条件，6 周后表面状态差异可辨。温差与湿度未控制，结论限于方向性。</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="section" id="tags">
+        <div class="section-head">
+          <h2>相关推荐</h2>
+          <span class="sub">你可能接着想找的</span>
+        </div>
+        <div class="tag-cloud">
+          <a href="/#deep">银链40cm与45cm选择</a>
+          <a href="/#deep">磁吸扣误开场景</a>
+          <a href="/#picks">契约卡亚克力2mm</a>
+          <a href="/#picks">银链短款长款对照</a>
+          <a href="/#guide">角色设定卡边界条款</a>
+          <a href="/#faq">镀银件露底处理</a>
+          <a href="/#updates">银件硫化处理顺序</a>
+          <a href="/#news">小个子高腰线搭配</a>
+          <a href="/#reviews">汗手党保养间隔</a>
+          <a href="/#guide">分格盒防潮珠收纳</a>
+        </div>
+      </section>
+
+      <!-- 可信度分层 -->
+      <section class="section" id="trust">
+        <div class="section-head">
+          <h2>可信度分层</h2>
+          <span class="sub">同一结论，来源不同，可信程度不同</span>
+        </div>
+        <div class="trust-grid">
+          <div class="card trust-col l1">
+            <span class="level">可复核</span>
+            <h3>带测量与样本说明的记录</h3>
+            <ul>
+              <li>6 人样本的链长位移测量，方法已公开</li>
+              <li>同批次银件 6 周对照，条件列明</li>
+              <li>倒角参数标注的样张手感记录</li>
+            </ul>
+          </div>
+          <div class="card trust-col l2">
+            <span class="level">单次经验</span>
+            <h3>来自个别收藏者的体感描述</h3>
+            <ul>
+              <li>长链前屈更稳的反馈，未控领口变量</li>
+              <li>磁吸扣单手操作的便利性评价</li>
+              <li>预算超支的实际花费记录</li>
+            </ul>
+          </div>
+          <div class="card trust-col l3">
+            <span class="level">待验证</span>
+            <h3>推断与转述，需自己对照</h3>
+            <ul>
+              <li>湿度 45%—55% 的通用建议</li>
+              <li>磁吸扣「不安全」的整体说法</li>
+              <li>长链「更稳」的单向概括</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 侧栏 -->
+    <aside class="sidebar" aria-label="侧栏导航">
+      <div class="card side-card">
+        <h2>栏目导航</h2>
+        <nav class="side-nav" id="sideNav">
+          <a href="/#overview">领域概览</a>
+          <a href="/#picks">精选推荐</a>
+          <a href="/#updates">最新更新</a>
+          <a href="/#channels">分类入口</a>
+          <a href="/#deep">深度解析</a>
+          <a href="/#guide">体验指南</a>
+          <a href="/#faq">常见问题</a>
+          <a href="/#reviews">用户评论</a>
+          <a href="/#news">相关资讯</a>
+          <a href="/#tags">相关推荐</a>
+          <a href="/#trust">可信度分层</a>
+        </nav>
+      </div>
+      <div class="card side-card">
+        <h2>近期热条目</h2>
+        <div class="side-mini">
+          <a href="/#picks">银链短款与长款佩戴对照表</a>
+          <a href="/#picks">三款锁扣的解锁手感对比</a>
+          <a href="/#picks">契约卡材质耐折度排行</a>
+          <a href="/#updates">长链防缠绕收纳法</a>
+          <a href="/#news">同批次银件 6 周对照</a>
+        </div>
+      </div>
+      <div class="card side-card">
+        <h2>记录说明</h2>
+        <p class="side-note">条目、评论与测量数据为示例性内容，用于展示信息组织方式。样本量、测试条件与方法说明以条目页标注为准。涉及角色扮演道具时，请以双方事先确认的边界条款为先。</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg viewBox="0 0 64 64" role="img" aria-label="银链与角色标记图形">
+          <rect width="64" height="64" rx="14" fill="#315a72"/>
+          <circle cx="32" cy="19" r="5.5" fill="#e8c98e"/>
+          <path d="M17 47c0-10.5 6.7-18 15-18s15 7.5 15 18" fill="none" stroke="#e8c98e" stroke-width="4" stroke-linecap="round"/>
+          <path d="M24 47h16" stroke="#cfe0ea" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="46" cy="14" r="3" fill="#cfe0ea"/>
+        </svg>
+        <div>
+          <div class="name">银儿女主玩物社区y</div>
+          <p>银链、锁扣与徽记的收藏索引，按材质差异与动作场景拆开的可核对记录。</p>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <h3>收藏与材质</h3>
+          <a href="/#deep">银链长度对照</a>
+          <a href="/#deep">锁扣误开测试</a>
+          <a href="/#picks">契约卡材质排行</a>
+        </div>
+        <div>
+          <h3>上手与保养</h3>
+          <a href="/#guide">新手三步上手</a>
+          <a href="/#updates">银件保养清单</a>
+          <a href="/#faq">镀银件处理</a>
+        </div>
+        <div>
+          <h3>互动与判定</h3>
+          <a href="/#reviews">用户评论</a>
+          <a href="/#trust">可信度分层</a>
+          <a href="/#news">相关资讯</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>示例数据说明：条目、评论与测量数据为展示性示例；页面更新时间 2026-11-08，对应新增收纳法与保养补录。</p>
+      <p>© 2026 银儿女主玩物社区y · 内容仅作信息整理，实际使用请先确认双方边界条款</p>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var menuToggle = document.getElementById('menuToggle');
+  var mainNav = document.getElementById('mainNav');
+  var searchBtn = document.getElementById('searchBtn');
+  var searchInput = document.getElementById('searchInput');
+  var feedback = document.getElementById('searchFeedback');
+  var toTop = document.getElementById('toTop');
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var sections = sideLinks.map(function(a){
+    var id = a.getAttribute('href').split('#')[1];
+    return document.getElementById(id);
+  });
+  var stickyOffset = 0;
+
+  function calcOffset(){
+    var ann = document.getElementById('announce');
+    var head = document.querySelector('.site-header');
+    stickyOffset = (ann ? ann.offsetHeight : 0) + (head ? head.offsetHeight : 0) + 12;
+  }
+  calcOffset();
+  window.addEventListener('resize', calcOffset);
+
+  if(menuToggle && mainNav){
+    menuToggle.addEventListener('click', function(){
+      var open = mainNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mainNav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.innerWidth <= 720){
+        mainNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  // 平滑滚动并预留吸顶偏移
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="/#"]');
+    if(!a) return;
+    var id = a.getAttribute('href').slice(2);
+    var target = document.getElementById(id);
+    if(!target) return;
+    e.preventDefault();
+    var top = target.getBoundingClientRect().top + window.pageYOffset - stickyOffset;
+    window.scrollTo({top: top, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+    history.replaceState(null, '', '/#' + id);
+  });
+
+  // 搜索：本地 HTML 文本查找
+  function doSearch(){
+    var q = (searchInput.value || '').trim();
+    if(!q){
+      feedback.textContent = '请输入关键词，例如“磁吸扣”“倒角”“保养”。';
+      feedback.classList.add('show');
+      return;
+    }
+    var lower = q.toLowerCase();
+    var nodes = document.querySelectorAll('.section h2, .section h3, .section h4, .section summary, .tag-cloud a, .comment p, .news-item p, .step p');
+    var found = null;
+    for(var i=0;i<nodes.length;i++){
+      if(nodes[i].textContent.toLowerCase().indexOf(lower) !== -1){
+        found = nodes[i];
+        break;
+      }
+    }
+    if(found){
+      feedback.textContent = '已定位到：' + found.textContent.trim().slice(0, 28) + (found.textContent.trim().length > 28 ? '…' : '');
+      feedback.classList.add('show');
+      var sec = found.closest('.section') || found.closest('article');
+      if(sec){
+        var top = sec.getBoundingClientRect().top + window.pageYOffset - stickyOffset;
+        window.scrollTo({top: top, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+      }
+    }else{
+      feedback.textContent = '没有找到与“' + q + '”匹配的条目，换个词试试，比如“锁扣”“收纳”“契约卡”。';
+      feedback.classList.add('show');
+    }
+  }
+  if(searchBtn){ searchBtn.addEventListener('click', doSearch); }
+  if(searchInput){
+    searchInput.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+    });
+  }
+
+  // 滚动高亮 + 回到顶部
+  function onScroll(){
+    var y = window.pageYOffset + stickyOffset + 30;
+    var current = -1;
+    for(var i=0;i<sections.length;i++){
+      if(sections[i] && sections[i].offsetTop <= y) current = i;
+    }
+    sideLinks.forEach(function(a, idx){
+      a.classList.toggle('active', idx === current);
+    });
+    if(window.pageYOffset > 420){
+      toTop.classList.add('show');
+    }else{
+      toTop.classList.remove('show');
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  if(toTop){
+    toTop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+    });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "银儿女主玩物社区y",
+  "description": "银链、锁扣与徽记的收藏索引，按材质差异与动作场景拆分的可核对记录。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "925银链戴着睡觉会变形吗",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "细链（1.2mm 以下）在翻身受压时有弯折风险，尤其链节连接处。粗链（2mm 以上）相对耐受，但压痕会留在皮肤上。夜间摘下是更稳的做法。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "镀银件露底了还能补救吗",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "露底区域无法自行恢复镀层，可用同色指甲油薄涂做临时遮挡，但会随摩擦脱落。露底面积超过三成时，换新比修复划算。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "契约卡用什么材质反复使用不易卷边",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2mm 亚克力边缘最稳，但重量和硬度高；PVC 0.8mm 轻便，反复弯折后四角会起毛；铜版纸覆膜成本低，遇潮易分层。需要频繁拿取选亚克力，只做展示选覆膜。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "链长 45cm 在身高 155cm 的人身上落点在哪",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "大致落在锁骨下缘到胸骨上端之间，比 165cm 的人高出约 2cm 视觉位置。搭配高腰线服装时，45cm 可能压到领口装饰，可改用 40cm 或把链坠调到侧边。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "角色设定卡里的边界条款要写多细",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "至少写清三件事：可接受动作范围、暂停口令、出现不适后的处理方式。条款细到能回答“这个动作算不算越界”即可，不必逐条列举所有可能。"
+      }
+    }
+  ]
+}
+</script>
+</body>
+  </html>
